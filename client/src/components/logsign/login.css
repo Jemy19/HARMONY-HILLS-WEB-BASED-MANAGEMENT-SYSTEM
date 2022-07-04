@@ -1,0 +1,10 @@
+.login,
+.image {
+  min-height: 100vh;
+}
+
+.bg-image {
+  background-image: url('https://scontent.fmnl9-1.fna.fbcdn.net/v/t1.6435-9/128683364_10218611097688779_7692080073336360143_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=8631f5&_nc_eui2=AeGw-1aVb0cu4N6EH87WEly-s8G8iztT09GzwbyLO1PT0Rv9q-S9xYaXLalpE2Z86fRh-RZLe_4fQ89OzkXjrGFP&_nc_ohc=ol3B4WPnwCcAX99SABX&tn=XxJumONdbe1UXBJk&_nc_ht=scontent.fmnl9-1.fna&oh=00_AT9VJXA_iwzuoNzyyMmfu5TlEPBQh6sRioUYttOLmPClaw&oe=62E89023');
+  background-size: cover;
+  background-position: center center;
+}
