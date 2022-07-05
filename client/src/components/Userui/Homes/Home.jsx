@@ -4,11 +4,13 @@ import "./home.css";
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import { Row, Col} from 'react-bootstrap';
-
+import Topbar from '../TopBar/Topbar';
 
 
 function Home() {
   return (
+    <div className='w-100'>        
+    <Topbar />
     <div className="container p-3">
       <div className="carousel">
     <Carousel>
@@ -75,7 +77,7 @@ function Home() {
     </Card>
       </Row>
     </div>
-
+    </div>
   );
 }
 

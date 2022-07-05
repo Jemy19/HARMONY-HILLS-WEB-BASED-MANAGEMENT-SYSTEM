@@ -7,7 +7,7 @@ import {userInputs, duesInputs,transaction, recordInputs} from './formSource'
 import New from './pages/new/new';
 
 import Sidebar from './components/sidebar/sidebar'
-import Topbar from './components/Userui/TopBar/Topbar'
+import Navbar from './components/Userui/TopBar/navbar'
 
 import Manageuser from './pages/userList/manage'
 import Newdues from './pages/MonthlyDues/Newdues'
@@ -30,11 +30,12 @@ import Signup from "./components/logsign/signup";
 import { AuthProvider } from "./context/AuthContextlog";
 import Userdash from "./components/Userui/Homes/Home";
 
+
 function App() {
   return (
     <BrowserRouter>
       <AuthProvider>
-        <Topbar />
+        <Navbar />
           <div className='App'>
             <Sidebar />   
           <Routes>
