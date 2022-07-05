@@ -7,7 +7,7 @@ import {userInputs, duesInputs,transaction, recordInputs} from './formSource'
 import New from './pages/new/new';
 
 import Sidebar from './components/sidebar/sidebar'
-import Navbar from './components/navbar/Navbar'
+import Topbar from './components/Userui/TopBar/Topbar'
 
 import Manageuser from './pages/userList/manage'
 import Newdues from './pages/MonthlyDues/Newdues'
@@ -28,16 +28,17 @@ import ForgotPassword from "./components/logsign/ForgotPassword";
 import UpdateProfile from "./components/logsign/UpdateProfile";
 import Signup from "./components/logsign/signup";
 import { AuthProvider } from "./context/AuthContextlog";
+import Userdash from "./components/Userui/Homes/Home";
 
 function App() {
   return (
     <BrowserRouter>
       <AuthProvider>
-        <Navbar />
+        <Topbar />
           <div className='App'>
             <Sidebar />   
           <Routes>
-            <Route exact path="/" element={
+            <Route exact path="/dash" element={
               <PrivateRoute>
                 <Dashboard />
               </PrivateRoute>
@@ -51,20 +52,21 @@ function App() {
             />
             <Route path="/signup" element={<Signup/>} />
             <Route path="/login" element={<Login/>} />
-            <Route path="/forgot-password" element={<ForgotPassword/>} />
-            <Route exact path = '/dashboard' element = {<PrivateRoute><Home /></PrivateRoute>}/>
-            <Route exact path = 'userList' element ={<PrivateRoute><Manageuser title=" Manage Users" /></PrivateRoute>} />
-            <Route exact path = 'newuser' element = {<PrivateRoute><New inputs={userInputs} title="Add New User" /></PrivateRoute>}/>
-            <Route exact path = 'manageusers' element =  {<PrivateRoute><Userlist /></PrivateRoute>}/>
-            <Route exact path = '/newdues' element = {<PrivateRoute><Newdues inputs={duesInputs} title="Add New Monthly Due"/></PrivateRoute>}/>
-            <Route exact path = '/newtransaction' element = {<PrivateRoute><Newtransaction inputs={transaction} title="Add New Transaction"/></PrivateRoute>}/>
-            <Route exact path = '/duelist' element = {<PrivateRoute><Listdue/></PrivateRoute>}/>
-            <Route exact path = '/invoice' element = {<PrivateRoute><Invoice title="Create New Invoice"/></PrivateRoute>}/>
-            <Route exact path = '/calendar' element = {<PrivateRoute><Calendar title="Calendar of Events"/></PrivateRoute>}/>
-            <Route exact path = '/transaction' element = {<PrivateRoute><Transactionlist title="Transaction Records"/></PrivateRoute>}/>
-            <Route exact path = '/messages' element = {<PrivateRoute><Messages/></PrivateRoute>}/>
-            <Route exact path = '/reports' element = {<PrivateRoute><Record title="Reports"/></PrivateRoute>}/>
-            <Route exact path = '/reports/addreports' element = {<PrivateRoute><Addrecord inputs={recordInputs} title="Generate Reports"/></PrivateRoute>}/>
+            <Route path="/forgot-password" element= {<ForgotPassword/>} />
+            <Route exact path = '/dashboard' element = {<AdminRoute><Home /></AdminRoute>}/>
+            <Route exact path = 'userList' element ={<AdminRoute><Manageuser title=" Manage Users" /></AdminRoute>} />
+            <Route exact path = 'newuser' element = {<AdminRoute><New inputs={userInputs} title="Add New User" /></AdminRoute>}/>
+            <Route exact path = 'manageusers' element =  {<AdminRoute><Userlist /></AdminRoute>}/>
+            <Route exact path = '/newdues' element = {<AdminRoute><Newdues inputs={duesInputs} title="Add New Monthly Due"/></AdminRoute>}/>
+            <Route exact path = '/newtransaction' element = {<AdminRoute><Newtransaction inputs={transaction} title="Add New Transaction"/></AdminRoute>}/>
+            <Route exact path = '/duelist' element = {<AdminRoute><Listdue/></AdminRoute>}/>
+            <Route exact path = '/invoice' element = {<AdminRoute><Invoice title="Create New Invoice"/></AdminRoute>}/>
+            <Route exact path = '/calendar' element = {<AdminRoute><Calendar title="Calendar of Events"/></AdminRoute>}/>
+            <Route exact path = '/transaction' element = {<AdminRoute><Transactionlist title="Transaction Records"/></AdminRoute>}/>
+            <Route exact path = '/messages' element = {<AdminRoute><Messages/></AdminRoute>}/>
+            <Route exact path = '/reports' element = {<AdminRoute><Record title="Reports"/></AdminRoute>}/>
+            <Route exact path = '/reports/addreports' element = {<AdminRoute><Addrecord inputs={recordInputs} title="Generate Reports"/></AdminRoute>}/>
+            <Route exact path = '/' element = {<PrivateRoute><Userdash/></PrivateRoute>}/>
           </Routes>
         </div>
       </AuthProvider>

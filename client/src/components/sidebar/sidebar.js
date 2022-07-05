@@ -10,7 +10,7 @@ function Sidebar() {
   const location = useLocation();
 
     useEffect(()=>{
-        if(location.pathname ==="/"){
+        if(location.pathname ==="/dashboard"){
             setActiveTab("Home")
         }
         else if(location.pathname === "/userlist"){
@@ -53,13 +53,16 @@ function Sidebar() {
       else if(location.pathname === "/forgot-password"){
         return null
       }
+      else if(location.pathname === "/"){
+        return null
+      }
   return (
     <div className="sidebar">
       <div className="sidebarWrapper">
         <div className="sidebarMenu">
           <h3 className="sidebarTitle">Dashboard</h3>
           <ul className="sidebarList">
-            <Link to="/" style={{textDecoration:"none"}}>
+            <Link to="/dashboard" style={{textDecoration:"none"}}>
             <li className = {`${activeTab === "Home" ? "active" : ""} sidebarListItem`} onClick = {() => setActiveTab("Home")}>
             <Home className="sidebarIcon" />
               Home 

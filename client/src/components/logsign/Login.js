@@ -19,9 +19,9 @@ export default function Login() {
             setloading(true)
             await login(emailRef.current.value, passwordRef.current.value)
             if(emailRef.current.value === "admin@gmail.com") {
-                navigate('/update-profile');
+                navigate('/dashboard');
             }else {
-            navigate('/dashboard');
+            navigate('/');
             }
         } catch {
             setError("Failed to log in")

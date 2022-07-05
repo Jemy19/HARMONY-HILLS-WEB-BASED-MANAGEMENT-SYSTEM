@@ -6,5 +6,5 @@ import { useAuth } from "../../context/AuthContextlog";
 export default function AdminRoute({ children }) {
   const { currentUser } = useAuth();
 
-  return currentUser.email === "admin@gmail.com" ? children : <Navigate to="/dashboard" />;
+  return currentUser.email === "admin@gmail.com" ? children : <Navigate to="/" />;
 }
