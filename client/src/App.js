@@ -50,6 +50,7 @@ function App() {
           <Route path="/login" element={<Login/>} />
           <Route path="/forgot-password" element={<ForgotPassword/>} />
         </Routes>
+          <div>
          <Navbar />
           <div className='App'>
               <Sidebar />   
@@ -68,6 +69,7 @@ function App() {
                 <Route exact path = '/reports' element = {<PrivateRoute><Record title="Reports"/></PrivateRoute>}/>
                 <Route exact path = '/reports/addreports' element = {<PrivateRoute><Addrecord inputs={recordInputs} title="Generate Reports"/></PrivateRoute>}/>
               </Routes>
+          </div>
           </div>
       </AuthProvider>
     </BrowserRouter>
