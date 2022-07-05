@@ -44,7 +44,15 @@ function Sidebar() {
             setActiveTab("About")
         }
     }, [location])
-
+      if(location.pathname === "/login"){ 
+        return null
+      }
+      else if(location.pathname === "/signup"){
+        return null
+      }
+      else if(location.pathname === "/forgot-password"){
+        return null
+      }
   return (
     <div className="sidebar">
       <div className="sidebarWrapper">

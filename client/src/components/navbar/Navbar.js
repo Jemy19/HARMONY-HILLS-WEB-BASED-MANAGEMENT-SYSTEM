@@ -2,6 +2,7 @@ import React,{useState} from 'react'
 import "./Navbar.css"
 import { NotificationsNone, Language, Settings } from '@material-ui/icons';
 import Dropdown from './Dropdown'
+import { useLocation } from "react-router-dom";
 
 function Navbar() {
 
@@ -26,6 +27,18 @@ function Navbar() {
       setDropdown(false);
     }
   };
+
+  const location = useLocation()
+
+  if(location.pathname === "/login"){ 
+    return null
+  }
+  else if(location.pathname === "/signup"){
+    return null
+  }
+  else if(location.pathname === "/forgot-password"){
+    return null
+  }
 
   return (
     <div className="topbar">
