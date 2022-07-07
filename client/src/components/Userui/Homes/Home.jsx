@@ -19,6 +19,7 @@ import { db } from "../../../firebase";
 function Home() {
 
   const [data, setData] = useState([]);
+  const [news, setNews] = useState([]);
   
   useEffect(() => {
 
@@ -50,7 +51,7 @@ function Home() {
         snapShot.docs.forEach((doc) => {
           list.push({ id: doc.id, ...doc.data() });
         });
-        setData(list);
+        setNews(list);
       },
       (error) => {
         console.log(error);
@@ -127,7 +128,7 @@ function Home() {
 
     <Card as={Col} className="text-center">
       <Card.Header>Events</Card.Header>
-      {data.map((item)=>(
+      {news.map((item)=>(
       <Card.Body>
       <div className="list-group">
         <a href="#" className="list-group-item list-group-item-action">

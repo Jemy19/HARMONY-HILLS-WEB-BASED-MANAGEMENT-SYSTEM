@@ -28,6 +28,9 @@ function Topbar() {
   else if(location.pathname === "/"){
     return null
   }
+  else if(location.pathname === "/Mohad"){
+    return null
+  }
 
 
     async function handleLougout() {

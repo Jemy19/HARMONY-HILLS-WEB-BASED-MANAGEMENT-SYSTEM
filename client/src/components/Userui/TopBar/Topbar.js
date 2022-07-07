@@ -44,9 +44,9 @@ function Topbar() {
    
     <Navbar  bg="dark" variant="primary">
         <Container>
-        <Navbar.Brand href="#home">Harmony Hills</Navbar.Brand>
+        <Navbar.Brand href="/">Harmony Hills</Navbar.Brand>
           <Nav className="me-auto">
-            <Nav.Link href="#message">messages</Nav.Link>
+            <Nav.Link href="/Mohad">messages</Nav.Link>
             <Nav.Link href="#home">Transaction</Nav.Link>
             <Nav.Link href="#reports">Reports</Nav.Link>
           </Nav>
@@ -55,6 +55,9 @@ function Topbar() {
         <div className="nicon">
       <NotificationsActiveIcon color="primary" />
       </div>
+        <div style={{ color: "white" }}>
+        {currentUser.email}
+        </div>
         <div className="avatars">
             <Avatar alt="Remy Sharp" src="/static/images/avatar/1.jpg" />
          </div>

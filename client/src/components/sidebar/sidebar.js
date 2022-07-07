@@ -65,6 +65,9 @@ function Sidebar() {
       else if(location.pathname === "/Udash"){
         return null
       }
+      else if(location.pathname === "/Mohad"){
+        return null
+      }
   return (
     <div className="sidebar">
       <div className="sidebarWrapper">
@@ -136,7 +139,7 @@ function Sidebar() {
             </Link>
             </li>
             <li className = {`${activeTab === "messages" ? "active" : ""} sidebarListItem`} onClick = {() => setActiveTab("messages")}>
-            <Link to ="/messages" style={{textDecoration:"none"}}>
+            <Link to ="/Mohad" style={{textDecoration:"none"}}>
               <MailOutline className="sidebarIcon" />
               Messages
               </Link>
