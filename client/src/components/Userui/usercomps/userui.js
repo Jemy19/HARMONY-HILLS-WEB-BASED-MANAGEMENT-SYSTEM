@@ -1,25 +1,43 @@
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from "react";
 import Carousel from 'react-bootstrap/Carousel';
-import "./home.css";
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import { Row, Col} from 'react-bootstrap';
-import Topbar from '../TopBar/Topbar';
-
 import {
-  collection,
-  getDocs,
-  deleteDoc,
-  doc,
-  onSnapshot,
-} from "firebase/firestore";
-import { db } from "../../../firebase";
+    collection,
+    getDocs,
+    deleteDoc,
+    doc,
+    onSnapshot,
+  } from "firebase/firestore";
+  import { db } from "../../../firebase";
+  import Announcementlist from '../usercomps/announcementlist';
 
+function Userui() {
+    const [news, setNews] = useState([]);
+    const [data, setData] = useState([]);
 
-function Home() {
+  useEffect(() => {
 
-  const [data, setData] = useState([]);
-  
+    const unsub = onSnapshot(
+      collection(db, "events"),
+      (snapShot) => {
+        let list = [];
+        snapShot.docs.forEach((doc) => {
+          list.push({ id: doc.id, ...doc.data() });
+        });
+        setNews(list);
+      },
+      (error) => {
+        console.log(error);
+      }
+    );
+
+    return () => {
+      unsub();
+    };
+  }, []);
+
   useEffect(() => {
 
     const unsub = onSnapshot(
@@ -41,30 +59,8 @@ function Home() {
     };
   }, []);
 
-  useEffect(() => {
-
-    const unsub = onSnapshot(
-      collection(db, "events"),
-      (snapShot) => {
-        let list = [];
-        snapShot.docs.forEach((doc) => {
-          list.push({ id: doc.id, ...doc.data() });
-        });
-        setData(list);
-      },
-      (error) => {
-        console.log(error);
-      }
-    );
-
-    return () => {
-      unsub();
-    };
-  }, []);
-
   return (
     <div className='w-100'>        
-    <Topbar />
     <div className="container p-3">
       <div className="carousel">
     <Carousel>
@@ -106,41 +102,34 @@ function Home() {
     </Carousel>
     </div>
     <Row className="mx-0">
-    <Card as={Col} className="text-center overflow-auto" >
-      <Card.Header>Announcement</Card.Header>
-      {data.map((item)=>(
+    <Card as={Col} className="text-center">
+      <Card.Header>Events</Card.Header>
+      {news.map((items)=>(
       <Card.Body>
-      <div className="list-group">
-        <a href="#" className="list-group-item list-group-item-action">
-          <div className="d-flex w-100 justify-content-between">
-            <h5 className="mb-1">{item.title}</h5>
-            <small>{item.date}</small>
-          </div>
-          <p className="mb-1">{item.body}</p>
-          <small>Donec id elit non mi porta.</small>
-        </a>
-      </div>
+        <Card.Title>{items.title}</Card.Title>
+        <Card.Text>{items.date}</Card.Text>
+        <Button variant="primary">Go somewhere</Button>
       </Card.Body>
       ))}
       <Card.Footer className="text-muted">2 days ago</Card.Footer>
     </Card>
-
     <Card as={Col} className="text-center">
-      <Card.Header>Events</Card.Header>
+      <Card.Header>News</Card.Header>
       {data.map((item)=>(
       <Card.Body>
-      <div className="list-group">
-        <a href="#" className="list-group-item list-group-item-action">
-          <div className="d-flex w-100 justify-content-between">
-            <h5 className="mb-1">{item.title}</h5>
-            <small>{item.date}</small>
-          </div>
-          <p className="mb-1">{item.body}</p>
-          <small>Donec id elit non mi porta.</small>
-        </a>
-      </div>
+        <Card.Title>{item.title}</Card.Title>
+        <Card.Text>{item.body}</Card.Text>
+        <Card.Text>{item.date}</Card.Text>
+        <Button variant="primary">Go somewhere</Button>
       </Card.Body>
       ))}
+      <Card.Footer className="text-muted">2 days ago</Card.Footer>
+    </Card>
+    <Card as={Col} className="text-center">
+      <Card.Header>News</Card.Header>
+      <Card.Body>
+        <Announcementlist />
+      </Card.Body>
       <Card.Footer className="text-muted">2 days ago</Card.Footer>
     </Card>
       </Row>
@@ -149,4 +138,4 @@ function Home() {
   );
 }
 
-export default Home
+export default Userui

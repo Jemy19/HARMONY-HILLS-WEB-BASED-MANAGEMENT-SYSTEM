@@ -13,7 +13,7 @@ import Manageuser from './pages/userList/manage'
 import Newdues from './pages/MonthlyDues/Newdues'
 import Listdue from './pages/userList/listdue'
 import Invoice from './pages/Invoice/invoice'
-import Calendar from './pages/events/calendar'
+
 import Transactionlist from './pages/userList/transactionlist'
 import Messages from './pages/messages/messages'
 import Newtransaction from './pages/transaction/newtransaction'
@@ -29,6 +29,11 @@ import UpdateProfile from "./components/logsign/UpdateProfile";
 import Signup from "./components/logsign/signup";
 import { AuthProvider } from "./context/AuthContextlog";
 import Userdash from "./components/Userui/Homes/Home";
+import Announcement from './components/Userui/usercomps/announcement';
+import Eventlist from './components/Userui/usercomps/eventlist';
+import Udash from './components/Userui/usercomps/userui';
+import Calendar from './components/Userui/usercomps/calendar';
+
 
 
 function App() {
@@ -54,6 +59,9 @@ function App() {
             <Route path="/signup" element={<Signup/>} />
             <Route path="/login" element={<Login/>} />
             <Route path="/forgot-password" element= {<ForgotPassword/>} />
+            <Route exact path = '/' element = {<PrivateRoute><Userdash/></PrivateRoute>}/>
+            <Route exact path = '/eventlist' element = {<PrivateRoute><Eventlist/></PrivateRoute>}/>
+            <Route exact path = '/udash' element = {<PrivateRoute><Udash/></PrivateRoute>}/>
             <Route exact path = '/dashboard' element = {<AdminRoute><Home /></AdminRoute>}/>
             <Route exact path = 'userList' element ={<AdminRoute><Manageuser title=" Manage Users" /></AdminRoute>} />
             <Route exact path = 'newuser' element = {<AdminRoute><New inputs={userInputs} title="Add New User" /></AdminRoute>}/>
@@ -67,7 +75,10 @@ function App() {
             <Route exact path = '/messages' element = {<AdminRoute><Messages/></AdminRoute>}/>
             <Route exact path = '/reports' element = {<AdminRoute><Record title="Reports"/></AdminRoute>}/>
             <Route exact path = '/reports/addreports' element = {<AdminRoute><Addrecord inputs={recordInputs} title="Generate Reports"/></AdminRoute>}/>
-            <Route exact path = '/' element = {<PrivateRoute><Userdash/></PrivateRoute>}/>
+            <Route exact path = '/Announcement' element = {<AdminRoute><Announcement /></AdminRoute>}/>
+            <Route exact path = '/messages' element = {<AdminRoute><Messages/></AdminRoute>}/>
+            <Route exact path = '/Calendar' element = {<AdminRoute><Calendar/></AdminRoute>}/>
+            
           </Routes>
         </div>
       </AuthProvider>

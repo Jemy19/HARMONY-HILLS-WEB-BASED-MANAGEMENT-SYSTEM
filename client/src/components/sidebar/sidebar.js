@@ -37,12 +37,15 @@ function Sidebar() {
         else if(location.pathname === "/messages"){
             setActiveTab("messages")
         }
-        else if(location.pathname === "/calendar"){
+        else if(location.pathname === "/Calendar"){
             setActiveTab("calendar")
         }
         else if(location.pathname === "/"){
             setActiveTab("About")
         }
+        else if(location.pathname === "/Announcement"){
+          setActiveTab("Announcement")
+      }
     }, [location])
       if(location.pathname === "/login"){ 
         return null
@@ -54,6 +57,12 @@ function Sidebar() {
         return null
       }
       else if(location.pathname === "/"){
+        return null
+      }
+      else if(location.pathname === "/eventlist"){
+        return null
+      }
+      else if(location.pathname === "/Udash"){
         return null
       }
   return (
@@ -139,9 +148,15 @@ function Sidebar() {
             </Link>
             </li>
             <li className = {`${activeTab === "calendar" ? "active" : ""} sidebarListItem`} onClick = {() => setActiveTab("calendar")}>
-            <Link to ="/calendar" style={{textDecoration:"none"}}>
+            <Link to ="/Calendar" style={{textDecoration:"none"}}>
               <Event className="sidebarIcon" />
-              Events
+              Events Calendar
+            </Link>
+            </li>
+            <li className = {`${activeTab === "Announcement" ? "active" : ""} sidebarListItem`} onClick = {() => setActiveTab("Announcement")}>
+            <Link to ="/Announcement" style={{textDecoration:"none"}}>
+              <Event className="sidebarIcon" />
+              Announcement
             </Link>
             </li>
           </ul>

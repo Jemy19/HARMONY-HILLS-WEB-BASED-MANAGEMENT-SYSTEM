@@ -12,9 +12,10 @@ import { useAuth } from "../../../context/AuthContextlog"
 
 function Topbar() {
   const[error, setError]= useState("")
-  const { logout } = useAuth()
+  const { logout, currentUser } = useAuth()
   const navigate = useNavigate()
   const location = useLocation()
+  
 
   if(location.pathname === "/login"){ 
     return null
@@ -45,7 +46,7 @@ function Topbar() {
         <Container>
         <Navbar.Brand href="#home">Harmony Hills</Navbar.Brand>
           <Nav className="me-auto">
-            <Nav.Link href="#message">Message</Nav.Link>
+            <Nav.Link href="#message">messages</Nav.Link>
             <Nav.Link href="#home">Transaction</Nav.Link>
             <Nav.Link href="#reports">Reports</Nav.Link>
           </Nav>
