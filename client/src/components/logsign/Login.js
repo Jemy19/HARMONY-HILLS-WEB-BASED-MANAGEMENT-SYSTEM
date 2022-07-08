@@ -3,6 +3,10 @@ import { Alert } from 'react-bootstrap'
 import { useAuth } from "../../context/AuthContextlog"
 import { Link, useNavigate  } from 'react-router-dom'
 import "./login.css"
+import { updateDoc, doc } from "firebase/firestore";
+import { db } from "../../firebase";
+
+
 export default function Login() {
     const emailRef = useRef()
     const passwordRef = useRef()
@@ -10,6 +14,7 @@ export default function Login() {
     const [error, setError] = useState("")
     const [loading, setloading] = useState(false)
     const navigate = useNavigate()
+    
 
     async function handleSubmit(e) {
         e.preventDefault()
@@ -18,6 +23,14 @@ export default function Login() {
             setError("")
             setloading(true)
             await login(emailRef.current.value, passwordRef.current.value)
+            
+            .then((userCredential) => { 
+                const user = userCredential.user;
+                updateDoc(doc(db, "users", user.uid), {
+                isOnline: true,
+            });
+            })
+
             if(emailRef.current.value === "admin@gmail.com") {
                 navigate('/dashboard');
             }else {

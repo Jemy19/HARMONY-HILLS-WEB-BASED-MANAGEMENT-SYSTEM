@@ -1,6 +1,6 @@
 import { DataGrid } from "@mui/x-data-grid";
 import { userColumns, userRows } from "../../datatablesource";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import {
   collection,
@@ -15,6 +15,8 @@ import Sidebar from '../sidebar/sidebar'
 
 const Datatable = () => {
   const [data, setData] = useState([]);
+  const navigate = useNavigate();
+
 
   useEffect(() => {
 
@@ -60,6 +62,12 @@ const Datatable = () => {
               onClick={() => handleDelete(params.row.id)}
             >
               Delete
+            </div>
+            <div
+              className="deleteButton"
+              onClick={() => navigate(`/update/${params.row.id}`)}
+            >
+              Update
             </div>
           </div>
         );

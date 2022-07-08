@@ -5,9 +5,12 @@ import Userlist from './pages/userList/Userlist'
 import {BrowserRouter, Routes, Route} from 'react-router-dom';
 import {userInputs, duesInputs,transaction, recordInputs} from './formSource'
 import New from './pages/new/new';
+import Update from './pages/new/update';
 
 import Sidebar from './components/sidebar/sidebar'
+import NewSidebar from './components/sidebar/newsidebar'
 import Navbar from './components/Userui/TopBar/navbar'
+import NewNavbar from './components/Userui/TopBar/newnavbar'
 
 import Manageuser from './pages/userList/manage'
 import Newdues from './pages/MonthlyDues/Newdues'
@@ -43,9 +46,9 @@ function App() {
   return (
     <BrowserRouter>
       <AuthProvider>
-        <Navbar />
+        <NewNavbar />
           <div className='App'>
-            <Sidebar />   
+            <NewSidebar />   
           <Routes>
             <Route exact path="/dash" element={
               <PrivateRoute>
@@ -62,6 +65,7 @@ function App() {
             <Route path="/signup" element={<Signup/>} />
             <Route path="/login" element={<Login/>} />
             <Route path="/forgot-password" element= {<ForgotPassword/>} />
+            <Route exact path = '/update/:id' element = {<AdminRoute><Update /></AdminRoute>}/>
             <Route exact path = '/' element = {<PrivateRoute><Userdash/></PrivateRoute>}/>
             <Route exact path = '/Mohad' element = {<PrivateRoute><Mohad/></PrivateRoute>}/>
             <Route exact path = '/eventlist' element = {<PrivateRoute><Eventlist/></PrivateRoute>}/>

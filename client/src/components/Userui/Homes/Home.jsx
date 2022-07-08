@@ -4,7 +4,6 @@ import "./home.css";
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import { Row, Col} from 'react-bootstrap';
-import Topbar from '../TopBar/Topbar';
 
 import {
   collection,
@@ -63,9 +62,7 @@ function Home() {
     };
   }, []);
 
-  return (
-    <div className='w-100'>        
-    <Topbar />
+  return (       
     <div className="container p-3">
       <div className="carousel">
     <Carousel>
@@ -145,7 +142,6 @@ function Home() {
       <Card.Footer className="text-muted">2 days ago</Card.Footer>
     </Card>
       </Row>
-    </div>
     </div>
   );
 }

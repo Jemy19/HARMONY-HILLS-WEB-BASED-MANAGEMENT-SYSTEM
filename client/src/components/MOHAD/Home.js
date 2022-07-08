@@ -17,7 +17,6 @@ import { ref, getDownloadURL, uploadBytes } from "firebase/storage";
 import User from "../MOHAD_MESSAGE/User";
 import MessageForm from "../MOHAD_MESSAGE/MessageForm";
 import Message from "../MOHAD_MESSAGE/Message";
-import Topbar from '../Userui/TopBar/Topbar';
 
 const Home = () => {
   const [users, setUsers] = useState([]);
@@ -108,8 +107,6 @@ const Home = () => {
     setImg("");
   };
   return (
-    <div className='w-100'>    
-    <Topbar />
     <div className="home_container">
       <div className="users_container">
         {users.map((user) => (
@@ -146,7 +143,6 @@ const Home = () => {
           <h3 className="no_conv">Select a user to start conversation</h3>
         )}
       </div>
-    </div>
     </div>
   );
 };

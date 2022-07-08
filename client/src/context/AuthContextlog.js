@@ -21,12 +21,12 @@ export function AuthProvider({ children }) {
             const user = userCredential.user;
             setDoc(doc(db, 'users/' + user.uid),{
                 email: email,
-                phoneNumber: phoneNum,
+                mobilenumber: phoneNum,
                 fullName: name,
                 address: address,
                 timeStamp: Timestamp.fromDate(new Date()),
-                uid: user.uid
-                
+                uid: user.uid,       
+                isOnline: false     
             });
         })
         
