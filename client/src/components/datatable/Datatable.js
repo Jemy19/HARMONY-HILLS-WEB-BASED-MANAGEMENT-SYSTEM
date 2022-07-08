@@ -11,7 +11,6 @@ import {
 } from "firebase/firestore";
 import { db } from "../../firebase";
 import './datatable.css'
-import Sidebar from '../sidebar/sidebar'
 
 const Datatable = () => {
   const [data, setData] = useState([]);

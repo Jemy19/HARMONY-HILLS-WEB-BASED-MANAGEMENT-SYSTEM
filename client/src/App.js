@@ -19,7 +19,7 @@ import Listdue from './pages/userList/listdue'
 import Invoice from './pages/Invoice/invoice'
 
 import Transactionlist from './pages/userList/transactionlist'
-import Messages from './pages/messages/messages'
+
 import Newtransaction from './pages/transaction/newtransaction'
 import Newtransactions from './pages/transaction/newtransactions'
 import Record from './pages/Records/Record'
@@ -71,9 +71,9 @@ function App() {
             <Route exact path = '/eventlist' element = {<PrivateRoute><Eventlist/></PrivateRoute>}/>
             <Route exact path = '/udash' element = {<PrivateRoute><Udash/></PrivateRoute>}/>
             <Route exact path = '/dashboard' element = {<AdminRoute><Home /></AdminRoute>}/>
-            <Route exact path = 'userList' element ={<AdminRoute><Manageuser title=" Manage Users" /></AdminRoute>} />
+            <Route exact path = 'manageusers' element ={<AdminRoute><Manageuser title=" Manage Users" /></AdminRoute>} />
             <Route exact path = 'newuser' element = {<AdminRoute><New inputs={userInputs} title="Add New User" /></AdminRoute>}/>
-            <Route exact path = 'manageusers' element =  {<AdminRoute><Userlist /></AdminRoute>}/>
+            <Route exact path = 'userList' element =  {<AdminRoute><Userlist /></AdminRoute>}/>
             <Route exact path = '/newdues' element = {<AdminRoute><Newdues inputs={duesInputs} title="Add New Monthly Due"/></AdminRoute>}/>
             <Route exact path = '/newduess' element = {<AdminRoute><Newduess inputs={duesInputs} title="Add New Monthly Due"/></AdminRoute>}/>
             <Route exact path = '/newtransaction' element = {<AdminRoute><Newtransaction inputs={transaction} title="Add New Transaction"/></AdminRoute>}/>
@@ -81,11 +81,10 @@ function App() {
             <Route exact path = '/invoice' element = {<AdminRoute><Invoice title="Create New Invoice"/></AdminRoute>}/>
             <Route exact path = '/calendar' element = {<AdminRoute><Calendar title="Calendar of Events"/></AdminRoute>}/>
             <Route exact path = '/transaction' element = {<AdminRoute><Transactionlist title="Transaction Records"/></AdminRoute>}/>
-            <Route exact path = '/messages' element = {<AdminRoute><Messages/></AdminRoute>}/>
+
             <Route exact path = '/reports' element = {<AdminRoute><Record title="Reports"/></AdminRoute>}/>
             <Route exact path = '/reports/addreports' element = {<AdminRoute><Addrecord inputs={recordInputs} title="Generate Reports"/></AdminRoute>}/>
             <Route exact path = '/Announcement' element = {<AdminRoute><Announcement /></AdminRoute>}/>
-            <Route exact path = '/messages' element = {<AdminRoute><Messages/></AdminRoute>}/>
             <Route exact path = '/Calendar' element = {<AdminRoute><Calendar/></AdminRoute>}/>
             <Route exact path = '/newtransactions' element = {<AdminRoute><Newtransactions/></AdminRoute>}/>
             

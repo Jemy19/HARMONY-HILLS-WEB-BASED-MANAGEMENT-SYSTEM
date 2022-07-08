@@ -41,9 +41,8 @@ function Announcement({inputs, title}) {
             <h1 style = {{color:"black", fontSize:"30px",textAlign:'center',fontSize:'40px'}}>Announcement</h1>
              <input style = {{width:'80%'}} placeHolder = 'title' className='newsinput' type='text' id='title' onChange={handleInput} />
             <input style = {{marginLeft:"-150px",width:'50%'}} placeHolder = 'date' className='newsinput' type='date' id='date' onChange={handleInput} />
-            <p style = {{marginLeft:"-190px"}}> Dear Tenants</p>
             <textarea placeHolder = 'Details...'style = {{border:'1px solid black', width:"100%",padding:"10px"}}rows='7' cols = '1000;' className='' type='text' id='body' onChange={handleInput} />     
-        <button  className = "duebutton" type="submit">
+        <button  className = "btn btn-primary btn-block text-uppercase mb-2 rounded-pill shadow-sm" type="submit">
              Submit
             </button>
         </form>

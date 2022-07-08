@@ -17,6 +17,7 @@ import { ref, getDownloadURL, uploadBytes } from "firebase/storage";
 import User from "../MOHAD_MESSAGE/User";
 import MessageForm from "../MOHAD_MESSAGE/MessageForm";
 import Message from "../MOHAD_MESSAGE/Message";
+import './css/messages.css'
 
 const Home = () => {
   const [users, setUsers] = useState([]);

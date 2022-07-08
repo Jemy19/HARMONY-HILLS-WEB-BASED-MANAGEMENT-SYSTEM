@@ -8,7 +8,7 @@ export const Routes = {
     MonthlyDues: { path: "/newduess" },
     Transaction: {path:"/transaction"},
     Invoice: {path:'/invoice'},
-    Message: {path:'/messages'},
+    Message: {path:'/Mohad'},
     Events: {path:"/calendar"},
     Announcement: {path:"/Announcement"},
 
