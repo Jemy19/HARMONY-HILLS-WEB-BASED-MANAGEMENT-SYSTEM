@@ -35,7 +35,7 @@ function Newdues() {
             ...data,
             timeStamp: serverTimestamp(),
           })
-          navigate('/duelist')
+          navigate('/listdue')
       };
 
     const handleInput = (e) =>{

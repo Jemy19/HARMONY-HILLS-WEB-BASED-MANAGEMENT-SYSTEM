@@ -33,7 +33,7 @@ function Newtransaction() {
             ...data,
             timeStamp: serverTimestamp(),
           })
-        navigate('/transaction')
+        navigate('/transactionlist')
       };
 
     const handleInput = (e) =>{

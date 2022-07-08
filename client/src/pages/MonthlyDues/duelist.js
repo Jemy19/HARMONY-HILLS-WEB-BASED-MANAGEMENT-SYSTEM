@@ -70,7 +70,7 @@ const Duelist = () => {
     <div className="datatable">
       <div className="datatableTitle">
         Monthly Due List
-        <Link to="/newdues" className="link" >
+        <Link to="/newduess" className="link" >
           Add New
         </Link>
       </div>

@@ -32,7 +32,7 @@ export default function Login() {
             })
 
             if(emailRef.current.value === "admin@gmail.com") {
-                navigate('/dashboard');
+                navigate('/Admin');
             }else {
             navigate('/');
             }

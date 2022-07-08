@@ -70,7 +70,7 @@ const Transaction = () => {
     <div className="datatable">
       <div className="datatableTitle">
         Transaction List
-        <Link to="/newtransaction" className="link" >
+        <Link to="/newtransactions" className="link" >
           Add New
         </Link>
       </div>

@@ -121,14 +121,13 @@ const Newsidebar= () => {
 
               <NavItem as={Link} title="Home" icon={faHome} link={Routes.Home.path}/>
               <CollapsableNavItem eventKey="" title="Users"  icon={faUser}>
-                    <NavItem  as={Link} title="User List"  link = {Routes.Users.path} icon={faUser} />
-                    <NavItem  as={Link} title="Manage Users"  link={Routes.ManageUser.path}  icon={faUsers} />
+                    <NavItem  as={Link} title="User List"  link = {Routes.Users.path} icon={faUsers} />
                     <NavItem as={Link} title="Add Users" link={Routes.AddUser.path}  icon={faUserPlus} />
               </CollapsableNavItem>
               <NavItem as={Link} title="Transaction" icon={faBriefcase} link={Routes.Transaction.path}/>
               <CollapsableNavItem eventKey="" title="Payables" icon={faCreditCard}>
                     <NavItem  as={Link} title="Monthly Dues" icon={faListAlt} link={Routes.MonthlyDues.path} />
-                    <NavItem  as={Link} title="Add Payables" icon={faPlusSquare} link={Routes.MonthlyDues.path} />
+                    <NavItem  as={Link} title="Add Payables" icon={faPlusSquare} link={Routes.Payable.path} />
               </CollapsableNavItem>
               
               <NavItem as={Link} title="Invoice"  icon={faInbox} link={Routes.Invoice.path}/>
@@ -136,8 +135,6 @@ const Newsidebar= () => {
               <NavItem as={Link} title="Events"  icon={faCalendar} link={Routes.Events.path}/>
               <NavItem as={Link} title="Announcement"  icon={faBullhorn} link={Routes.Announcement.path}/>
               <Dropdown.Divider className="my-3 border-indigo" />
-
-             
             </Nav>
           </div>
         </SimpleBar>

@@ -1,12 +1,11 @@
 export const Routes = {
     // pages
-    Home: { path: "/dashboard" },
+    Home: { path: "/Admin" },
     Users: { path: "/userList" },
-    ManageUser: { path: "/manageusers" },
     AddUser: { path: "/newuser" },
-    Payable: { path: "/duelist" },
-    MonthlyDues: { path: "/newduess" },
-    Transaction: {path:"/transaction"},
+    Payable: { path: "/newduess" },
+    MonthlyDues: { path: "/listdue" },
+    Transaction: {path:"/transactionlist"},
     Invoice: {path:'/invoice'},
     Message: {path:'/Mohad'},
     Events: {path:"/calendar"},
