@@ -20,6 +20,7 @@ import Reservationlist from './pages/reservation/Reservationlist'
 import UserReservationlist from './pages/reservation/UserReservationlist'
 
 import Transactionlist from './pages/userList/transactionlist'
+import UserTransactionlist from './pages/userList/Usertransactionlist'
 
 import Newtransactions from './pages/transaction/newtransactions'
 import Record from './pages/Records/Record'
@@ -70,6 +71,7 @@ function App() {
             <Route exact path = '/Reservation' element = {<AdminRoute><Reservation /></AdminRoute>}/>
             <Route exact path = '/Reservationlist' element = {<AdminRoute><Reservationlist/></AdminRoute>}/>
             <Route exact path = '/UserReservationlist' element = {<PrivateRoute><UserReservationlist/></PrivateRoute>}/>
+            <Route exact path = '/Usertransactionlist' element = {<PrivateRoute><UserTransactionlist/></PrivateRoute>}/>
 
             <Route exact path = '/' element = {<PrivateRoute><Userdash/></PrivateRoute>}/>
             <Route exact path = '/Message' element = {<PrivateRoute><Message/></PrivateRoute>}/>

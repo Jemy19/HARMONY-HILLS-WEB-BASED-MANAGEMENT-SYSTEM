@@ -46,6 +46,9 @@ const Newsidebar= () => {
   else if(location.pathname === "/UserReservationlist"){
     return null
   }
+  else if(location.pathname === "/Usertransactionlist"){
+    return null
+  }
   
   
   const CollapsableNavItem = (props) => {
