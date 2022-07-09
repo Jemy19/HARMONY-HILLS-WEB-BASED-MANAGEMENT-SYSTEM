@@ -16,13 +16,14 @@ const initialState = {
   name: "",
   description: "",
   address: "",
+  date:"",
   amount:"",
 }
 
 function Newtransaction() {
 
   const [data,setData] = useState(initialState)
-  const { name, description, address, amount,entry} = data
+  const { name, description,date, address, amount,entry} = data
   const navigate = useNavigate()
   const transactionid = uuid()
     const handleAdd = async (e) => {
@@ -44,7 +45,7 @@ function Newtransaction() {
     }
   
 
-      const [date, setDate] = useState(new Date());
+
       const [value,setValue]=useState('');
   
       const handleSelect=(e)=>{
@@ -80,21 +81,24 @@ function Newtransaction() {
               </FloatingLabel>
             </Form.Group>
             
-            <Form.Group className="mb-3" controlId="Date">
-            <FloatingLabel controlId="floatingInput" label="Date" className="mb-3">
-            <Form.Control id = 'date' type="text" name="datepic" placeholder="Date" value={date}
-                    onInput={(e) => setDate(e.target.value)} onChange = {handleInput}/>
-              </FloatingLabel>
-                </Form.Group> 
+           
+
+                <Form.Group className="mb-3" controlId="Date">
+          <FloatingLabel controlId="floatingInput" label="Date" className="mb-3">
+          <Form.Control type="date" name="datepic" placeholder="Date" id = 'date' value={date} onChange = {handleInput}/>
+          </FloatingLabel>
+        </Form.Group>
+
+
     
     
-                <InputGroup className="mb-3">
-                <DropdownButton id="dropdown-basic-button" title="Type of Entry" onSelect={handleSelect} >
-                <Dropdown.Item value = "Debit" eventKey="Debit">Debit</Dropdown.Item>
-                <Dropdown.Item value = "Credit" eventKey="Credit">Credit</Dropdown.Item>
-                </DropdownButton>
-                <Form.Control id = "entry" value={value} onLoad= {handleInput}/>
-                 </InputGroup>
+                
+                 <Form.Select aria-label="Default select example" id = 'entry' onChange = {handleInput}>
+                    <option>Type of entry</option>
+                    <option value="Debit">Debit</option>
+                    <option value="Credit">Credit</option>
+                  </Form.Select>
+        
     
             <Form.Group className="mb-3" controlId="Amount">
             <FloatingLabel controlId="floatingInput" label="Amount" className="mb-3">

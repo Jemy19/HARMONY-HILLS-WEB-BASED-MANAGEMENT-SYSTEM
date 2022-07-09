@@ -13,13 +13,13 @@ import './invoice.css'
 
 function Invoice({title}) {
   const [showInvoice, setShowInvoice] = useState(false)
-  const [name, setName] = useState("")
-  const [address, setAddress] = useState("")
-  const [email, setEmail] = useState("")
-  const [phone, setPhone] = useState("")
-  const [bankName, setBankName] = useState("")
-  const [bankAccount, setBankAccount] = useState("")
-  const [website, setWebsite] = useState("")
+  const [name] = useState("Admin")
+  const [address] = useState("92 Willow St. Harmony Hills Subd 1")
+  const [email] = useState("HarmonyHAdmin@gmail.com")
+  const [phone] = useState("09284718271")
+  const [bankName] = useState("Gcash / Paymaya")
+  const [bankAccount] = useState("0928-471-8271 / 4834-4291-3982-0942")
+  const [website] = useState("www.facebook/harmonyhills1")
   const [clientName, setClientName] = useState("")
   const [clientAddress, setClientAddress] = useState("")
   const [invoiceNumber, setInvoiceNumber] = useState("")
@@ -37,6 +37,7 @@ function Invoice({title}) {
 
 
 
+  
   const handlePrint = () => {
     window.print()
   }
@@ -52,7 +53,7 @@ function Invoice({title}) {
         hover:bg-transparent hover:text-green-500 transition-all duration-300">
           Print</button>} content={() => componentRef.current}/>
 
-        <div ref={componentRef} className="p-5" style={{marginTop:"40px",marginRight:"700px",marginLeft:"400px", padding:"20px", border:"1px solid black", borderRadius:"10px"}}>
+        <div ref={componentRef} className="p-5">
         <Header handlePrint={handlePrint}/>
         <MainDetails name={name} address={address} />
         <ClientDetails clientName={clientName} clientAddress={clientAddress}/>
@@ -69,98 +70,11 @@ function Invoice({title}) {
        ) : (
           <>
           {/**name, address, email,Phone number, bank acc, client name, client address, invoice number, invoice date, due date, notes,  */}
-          <div className="top">
-            <h1>{title}</h1>
-        </div>
-          <div className="flex flex-col justify center" style={{marginTop:"40px",marginRight:"500px",marginLeft:"400px", padding:"20px", border:"1px solid black", borderRadius:"10px"}}>
-          <article className="md:grid grid-cols-2 gap-10">
+         
+          <div className="flex flex-col justify center">
+      
 
-            <div className="flex flex-col">
-          <label htmlFor="name">Enter your Full Name</label>
-          <input type="text" name="text" id="name" placeholder="Enter Your Name" autoComplete="off" 
-          value={name} style ={{width:"93%"}}
-          onChange={(e) => setName(e.target.value)}
-          /></div>
-
-            <div className="flex flex-col">
-          <label htmlFor="address">Enter your Address</label>
-          <input type="text" name="address" id="address" placeholder="Enter Your Adress" autoComplete="off" 
-          value={address} style ={{width:"93%"}}
-          onChange={(e) => setAddress(e.target.value)}
-          /></div>
-          </article>
-
-          <article className="md:grid grid-cols-3 gap-10">
-                <div className="flex flex-col">
-                  <label htmlFor="email">Enter your email</label>
-                  <input
-                    type="email"
-                    name="email"
-                    id="email"
-                    placeholder="Enter your email"
-                    autoComplete="off"
-                    value={email} style ={{width:"93%"}}
-                    onChange={(e) => setEmail(e.target.value)}
-                  />
-                </div>
-
-                <div className="flex flex-col">
-                  <label htmlFor="website">Enter your Social Media Link</label>
-                  <input
-                    type="url"
-                    name="website"
-                    id="website"
-                    placeholder="Enter your Social Media Link"
-                    autoComplete="off"
-                    value={website} style ={{width:"93%"}}
-                    onChange={(e) => setWebsite(e.target.value)}
-                  />
-                </div>
-
-                <div className="flex flex-col">
-                  <label htmlFor="phone">Enter your phone</label>
-                  <input
-                    type="text"
-                    name="phone"
-                    id="phone"
-                    placeholder="Enter your phone"
-                    autoComplete="off"
-                    value={phone} style ={{width:"93%"}}
-                    onChange={(e) => setPhone(e.target.value)}
-                  />
-                </div>
-              </article>
-
-              <article className="md:grid grid-cols-2 gap-10">
-                <div className="flex flex-col">
-                  <label htmlFor="bankName">Enter your bank name</label>
-                  <input
-                    type="text"
-                    name="bankName"
-                    id="bankName"
-                    placeholder="Enter your bank name"
-                    autoComplete="off"
-                    value={bankName} style ={{width:"93%"}}
-                    onChange={(e) => setBankName(e.target.value)}
-                  />
-                </div>
-
-                <div className="flex flex-col">
-                  <label htmlFor="bankAccount">
-                    Enter your bank account number
-                  </label>
-                  <input
-                    type="text"
-                    name="bankAccount"
-                    id="bankAccount"
-                    placeholder="Enter your bank account number"
-                    autoComplete="off"
-                    value={bankAccount} style ={{width:"93%"}}
-                    onChange={(e) => setBankAccount(e.target.value)}
-                  />
-                </div>
-              </article>
-
+    
               <article className="md:grid grid-cols-2 gap-10 md:mt-16">
                 <div className="flex flex-col">
                   <label htmlFor="clientName">Enter your client's name</label>
@@ -170,7 +84,7 @@ function Invoice({title}) {
                     id="clientName"
                     placeholder="Enter your client's name"
                     autoComplete="off"
-                    value={clientName} style ={{width:"93%"}}
+                    value={clientName}
                     onChange={(e) => setClientName(e.target.value)}
                   />
                 </div>
@@ -200,7 +114,7 @@ function Invoice({title}) {
                     id="invoiceNumber"
                     placeholder="Invoice Number"
                     autoComplete="off"
-                    value={invoiceNumber} style ={{width:"93%"}}
+                    value={invoiceNumber}
                     onChange={(e) => setInvoiceNumber(e.target.value)}
                   />
                 </div>
@@ -213,7 +127,7 @@ function Invoice({title}) {
                     id="invoiceDate"
                     placeholder="Invoice Date"
                     autoComplete="off"
-                    value={invoiceDate} style ={{width:"93%"}}
+                    value={invoiceDate}
                     onChange={(e) => setInvoiceDate(e.target.value)}
                   />
                 </div>
@@ -226,7 +140,7 @@ function Invoice({title}) {
                     id="dueDate"
                     placeholder="Invoice Date"
                     autoComplete="off"
-                    value={dueDate} style ={{width:"93%"}}
+                    value={dueDate}
                     onChange={(e) => setDueDate(e.target.value)}
                   />
                 </div>
@@ -274,5 +188,6 @@ function Invoice({title}) {
     </>
   );
 }
+
 
 export default Invoice;

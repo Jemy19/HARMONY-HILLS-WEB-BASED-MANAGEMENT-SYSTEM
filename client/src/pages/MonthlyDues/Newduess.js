@@ -46,7 +46,7 @@ function Newdues({title}) {
         setData({...data, [id] : value})
     }
   
-    console.log(data)
+    
 
 
  
@@ -77,10 +77,10 @@ function Newdues({title}) {
         </Form.Group>
         
         <Form.Group className="mb-3" controlId="Date">
-        <FloatingLabel controlId="floatingInput" label="Date" className="mb-3">
-        <Form.Control type="date" name="datepic" placeholder="Date" id = 'date' value={date} onChange = {handleInput}/>
-                  </FloatingLabel>
-            </Form.Group>
+          <FloatingLabel controlId="floatingInput" label="Date" className="mb-3">
+          <Form.Control type="date" name="datepic" placeholder="Date" id = 'date' value={date} onChange = {handleInput}/>
+          </FloatingLabel>
+        </Form.Group>
 
         <Form.Select aria-label="Default select example" id = 'due' onChange = {handleInput}>
               <option>Choose Payable...</option>

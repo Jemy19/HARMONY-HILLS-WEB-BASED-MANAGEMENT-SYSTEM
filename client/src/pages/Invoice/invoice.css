@@ -1,13 +1,132 @@
-.top{
-    -webkit-box-shadow: 2px 4px 10px 1px rgba(0, 0, 0, 0.47);
-    box-shadow: 2px 4px 10px 1px rgba(201, 201, 201, 0.47);
-    padding: 10px;
-    margin: 20px;
-    display: flex;
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-h1 {
-  color: lightgray;
-  font-size: 20px;
-  font-weight: bold;
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
 }
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url("https://fonts.googleapis.com/css2?family=Reem+Kufi:wght@400;700&display=swap");
+
+:root {
+  --blue-card: #12036f;
+  --red-card: #f12711;
+  --yellow-card: #f5af19;
+}
+
+::selection,
+::-moz-selection {
+  @apply bg-teal-500 text-white;
+}
+
+::-webkit-scrollbar {
+  @apply w-3;
+}
+
+::-webkit-scrollbar-track {
+  @apply shadow rounded-lg bg-teal-100;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-teal-400 rounded-lg hover:bg-teal-500 transition-all duration-200;
+}
+
+.beta__tag {
+  position: absolute;
+  left: -6rem;
+  top: 2rem;
+  background-color: #f12711;
+  width: 300px;
+  transform: rotate(-45deg);
+  padding: 0.5rem;
+  text-align: center;
+}
+.video {
+  width: calc(100vw - 40px);
+  margin: auto;
+  height: 200px;
+}
+.testimonials .article:first-child {
+  border-color: var(--red-card);
+}
+
+.testimonials .article:first-child .content {
+  background-color: var(--red-card);
+  padding: 1rem;
+}
+
+.testimonials .article:nth-child(2) {
+  border-color: var(--yellow-card);
+}
+
+.testimonials .article:nth-child(2) .content {
+  background-color: var(--yellow-card);
+  padding: 1rem;
+}
+
+.testimonials .article:nth-child(3) {
+  border-color: var(--blue-card);
+}
+
+.testimonials .article:nth-child(3) .content {
+  background-color: var(--blue-card);
+  padding: 1rem;
+}
+
+.call__to__action {
+  background-image: linear-gradient(90deg, #f5af19 0%, #f12711 100%);
+}
+
+.about {
+  background-image: linear-gradient(90deg, #f12711 0%, #f5af19 100%);
+  padding: 2rem 0;
+}
+
+.contact__form input,
+.contact__form textarea,
+.contact__form button {
+  width: calc(100vw - 40px);
+}
+
+.invoice__preview {
+  margin-top: 1.25rem;
+}
+
+@media (min-width: 500px) {
+  .video {
+    height: 300px;
+    width: calc(100vw - 60px);
+  }
+}
+
+@media (min-width: 640px) {
+  .video {
+    height: 400px;
+  }
+}
+
+@media (min-width: 768px) {
+  .about .overlay {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  .contact__form input,
+  .contact__form textarea,
+  .contact__form button {
+    width: calc(50vw - 40px);
+  }
+}
+
