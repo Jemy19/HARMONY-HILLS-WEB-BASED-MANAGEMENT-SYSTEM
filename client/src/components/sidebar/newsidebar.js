@@ -37,7 +37,7 @@ const Newsidebar= () => {
   else if(location.pathname === "/Udash"){
     return null
   }
-  else if(location.pathname === "/Mohad"){
+  else if(location.pathname === "/Message"){
     return null
   }
   
@@ -117,7 +117,7 @@ const Newsidebar= () => {
               </Nav.Link>
             </div>
             <Nav className="flex-column pt-3 pt-md-0 text-white">
-              <NavItem as={Link} title="Harmony Hills" icon={faBuilding} link={Routes.Home.path}/>
+              
 
               <NavItem as={Link} title="Home" icon={faHome} link={Routes.Home.path}/>
               <CollapsableNavItem eventKey="" title="Users"  icon={faUser}>
@@ -131,6 +131,7 @@ const Newsidebar= () => {
               </CollapsableNavItem>
               
               <NavItem as={Link} title="Invoice"  icon={faInbox} link={Routes.Invoice.path}/>
+              <NavItem as={Link} title="Reservations"  icon={faInbox} link={Routes.Reservation.path}/>
               <NavItem as={Link} title="Message"  icon={faEnvelope} link={Routes.Message.path}/>
               <NavItem as={Link} title="Events"  icon={faCalendar} link={Routes.Events.path}/>
               <NavItem as={Link} title="Announcement"  icon={faBullhorn} link={Routes.Announcement.path}/>

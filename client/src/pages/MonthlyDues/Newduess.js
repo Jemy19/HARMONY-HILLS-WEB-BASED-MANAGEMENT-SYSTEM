@@ -21,7 +21,7 @@ const initialState = {
   amount:"",
 }
 
-function Newdues() {
+function Newdues({title}) {
 
     const [data,setData] = useState(initialState)
     const dueid = uuid();
@@ -35,7 +35,7 @@ function Newdues() {
             ...data,
             timeStamp: serverTimestamp(),
           })
-          navigate('/listdue')
+          navigate('/duelist')
       };
 
     const handleInput = (e) =>{
@@ -47,18 +47,15 @@ function Newdues() {
   
     console.log(data)
 
-    const [value,setValue]=useState('');
 
-  const handleSelect=(e)=>{
-    console.log(e);
-    setValue(e)
-  }
+ 
+
   return (
-
     <>
+    <div className="newContainer marginTop -245px">
     <Container id="MonthlyDueForm-container" className="d-grid h-100">
-<Form id="MonthlyDueForm-Form" className="text-center w-100"   onSubmit = {handleAdd}>
-    <h3>Payable Form</h3>
+    <Form id="MonthlyDueForm-Form" className="text-center w-100"   onSubmit = {handleAdd}>
+    <h3 style={{marginTop:"-245px", marginBottom:"10px"}}>Payable Form</h3>
 
     <Form.Group controlId="Fullname">
     <FloatingLabel controlId="floatingInput" label="Full Name" className="mb-3">
@@ -72,44 +69,41 @@ function Newdues() {
           </FloatingLabel>
         </Form.Group>
         
+        <Form.Group className="mb-3" controlId="Address">
+        <FloatingLabel controlId="floatingInput" label="Contact Number" className="mb-3">
+          <Form.Control type="address" size="lg" placeholder="Address" autoComplete="address" className="position-relative" value = {address} id='address' onChange = {handleInput} />
+          </FloatingLabel>
+        </Form.Group>
+        
         <Form.Group className="mb-3" controlId="Date">
         <FloatingLabel controlId="floatingInput" label="Date" className="mb-3">
-        <Form.Control type="date" name="datepic" placeholder="Date" id = 'date' value={date}
-                onChange={handleInput}/>
+        <Form.Control type="date" name="datepic" placeholder="Date" id = 'date' value={date} onChange = {handleInput}/>
                   </FloatingLabel>
             </Form.Group>
 
-            <InputGroup className="mb-3">
-        <DropdownButton
-          variant="outline-secondary"
-          title="Other Dues"
-          id="input-group-dropdown-1"
-          onSelect={handleSelect}
-        >
-          <Dropdown.Item eventKey="Sticker for Cars">Sticker for Cars</Dropdown.Item>
-          <Dropdown.Item eventKey="Gym">Gym</Dropdown.Item>
-          <Dropdown.Item eventKey="Swimming Pool">Swimming Pool</Dropdown.Item>
-          <Dropdown.Item eventKey="Tennis Court">Tennis Court</Dropdown.Item>
-          <Dropdown.Divider />
-          <Dropdown.Item eventKey="Association Monthly Due">Association Monthly Due</Dropdown.Item>
-        </DropdownButton>
-        <Form.Control aria-label="Text input with dropdown button" value = {value} id='due' onChange = {handleInput}/>
-      </InputGroup>
-
-
+        <Form.Select aria-label="Default select example" id = 'due' onChange = {handleInput}>
+              <option>Choose Payable...</option>
+              <option value="Gym">Gym</option>
+              <option value="Parking">Parking</option>
+              <option value="Swimming Pool">Swimming Pool</option>
+              <option value="Association Monthly Due">Association Monthly Due</option>
+        </Form.Select>
+        
         <Form.Group className="mb-3" controlId="Amount">
         <FloatingLabel controlId="floatingInput" label="Amount" className="mb-3">
           <Form.Control type="Amount" size="lg" placeholder="Amount" autoComplete="Amount" className="position-relative"  value = {amount} id='amount' onChange = {handleInput}/>
           </FloatingLabel>
         </Form.Group>
-        
+       
 
         <div className="d-grid">
           <Button variant="primary" size="lg" type = 'submit'>Submit</Button>
         </div>
-</Form>
+    </Form>
     </Container>
+    </div>
     </>
+
   );
 }
 

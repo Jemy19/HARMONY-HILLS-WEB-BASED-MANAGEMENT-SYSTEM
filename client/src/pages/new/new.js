@@ -6,6 +6,7 @@ import { setDoc, doc, collection, addDoc, Timestamp, serverTimestamp } from "fir
 import {auth, db, storage} from '../../firebase'
 import {createUserWithEmailAndPassword } from "firebase/auth";
 import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
+import { useAuth } from "../../context/AuthContextlog"
 
 
 function New({inputs, title}) {
@@ -20,7 +21,7 @@ function New({inputs, title}) {
     const uploadFile = () => {
       const name = new Date().getTime() + file.name;
 
-      console.log(name);
+      
       const storageRef = ref(storage, file.name);
       const uploadTask = uploadBytesResumable(storageRef, file);
 
@@ -55,8 +56,8 @@ function New({inputs, title}) {
     file && uploadFile();
   }, [file]);
 
-  console.log(data);
-
+  
+  const { login } = useAuth()
 
   const handleAdd = async (e) => {
     
@@ -71,7 +72,9 @@ function New({inputs, title}) {
         uid: res.user.uid,
         ...data,
         timeStamp: serverTimestamp(),
+        isOnline: false
       });
+      await login("admin@gmail.com", "123456")
       navigate('/userList')
     } catch (err) {
       console.log(err);
@@ -86,7 +89,7 @@ function New({inputs, title}) {
       setData({...data, [id] : value})
   }
 
-  console.log(data)
+  
 
 
   return (
@@ -129,6 +132,7 @@ function New({inputs, title}) {
                     id={input.id}
                     type={input.type}
                     placeholder={input.placeholder}
+                    maxLength= {input.maxLength} 
                     onChange={handleInput}
                   />
                 </div>

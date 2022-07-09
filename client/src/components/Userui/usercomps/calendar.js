@@ -10,20 +10,33 @@ import {Link} from 'react-router-dom'
 function Calendar({title}) {
     const [popup,setPop]=useState(false)
     const [data, setData] = useState([])
+
     const eventId = uuid()
     const [date, setDate] = useState([])
+    const [eventsData, setEventsData] = useState([])
+
     useEffect(() => {
-        const q = query(collection(db,"events"))
-        const unsub = onSnapshot(q, (snap) => {
-            const array = snap.docs.forEach(doc =>{
-                return{
-                    title: doc.get('title'),
-                }
-            })
-            setData([...array])
-        })
-        return() => {unsub()}
-    },[])
+
+        // LISTEN (REALTIME)
+        const unsub = onSnapshot(
+          collection(db, "events"),
+          (snapShot) => {
+            let list = [];
+            snapShot.docs.forEach((doc) => {
+              list.push({ id: doc.id, ...doc.data() });
+            });
+            setEventsData(list);
+          },
+          (error) => {
+            console.log(error);
+          }
+        );
+    
+        return () => {
+          unsub();
+        };
+      }, []);
+
     const handleDateClick = (e:DateClickArg) =>{
         if (e.jsEvent.altKey){
             setPop(!popup)
@@ -61,7 +74,7 @@ function Calendar({title}) {
     </div>
     <FullCalendar plugins = {[dayGridPlugin, interactionPlugin]} 
     dateClick = {handleDateClick}
-    events= {data}
+    events= {eventsData}
     />
     </div>
     </div>
@@ -90,14 +103,24 @@ function Calendar({title}) {
                                 </div>
                                 <label>Date Scheduled</label>
                                 <div className="form-group mb-3">
-                                            <input id="date" type="text"  required="" 
+                                            <input id="sdate" type="text"  required="" 
                                             autoFocus="" className="form-control rounded-pill border-0 shadow-sm px-4" value = {date} onInput={handleInput}/>
                                 </div>
-                                <label>Time</label>
+                                <label>Date End</label>
                                 <div className="form-group mb-3">
-                                            <input id="time" type="time" required="" 
+                                            <input id="edate" type="date"  required="" 
+                                            autoFocus="" className="form-control rounded-pill border-0 shadow-sm px-4" onInput={handleInput}/>
+                                </div>
+                                <label>Start Time</label>
+                                <div className="form-group mb-3">
+                                            <input id="stime" type="time" required="" 
                                             autoFocus="" className="form-control rounded-pill border-0 shadow-sm px-4" onChange={handleInput}/>
                                         </div>
+                                <label>End Time</label>
+                                <div className="form-group mb-3">
+                                            <input id="etime" type="time" required="" 
+                                            autoFocus="" className="form-control rounded-pill border-0 shadow-sm px-4" onChange={handleInput}/>
+                                </div>
                                 <label>Location</label>
                                 <div className="form-group mb-3">
                                             <input id="location" type="text" required="" 

@@ -17,13 +17,19 @@ export const userColumns = [
       },
     },
     {
+      field: "fullName",
+      headerName: "Full Name",
+      width: 250,
+      editable: true,
+    },
+    {
       field: "email",
       headerName: "Email",
       width: 250,
       editable: true,
     },
     {
-      field: "phoneNumber",
+      field: "mobilenumber",
       headerName: "Contact Number",
       width: 250,
       editable: true,
@@ -41,19 +47,16 @@ export const userColumns = [
 
 
   export const dueColumns = [
-    { field: "id", 
-    headerName: "ID", 
-    width: 90,
-  },
+    
     {
       field: "name",
-      headerName: "Name",
+      headerName: "Full Name",
       width: 250,
 
     },
     {
-      field: "description",
-      headerName: "Description",
+      field: "address",
+      headerName: "Address",
       width: 250,
       editable: true,
     },
@@ -70,8 +73,8 @@ export const userColumns = [
       width: 120,
     },
     {
-      field: "status",
-      headerName: "Status",
+      field: "due",
+      headerName: "Type of Payable",
       width: 120,
       editable: true,
     }
@@ -128,39 +131,111 @@ export const userColumns = [
 
   export const transaction = [
     { field: "id", 
-    headerName: "ID", 
-    width: 90,
+    headerName: "Transaction Id", 
+    width: 150,
   },
     {
       field: "name",
-      headerName: "Name",
-      width: 250,
+      headerName: "Full Name",
+      width: 200,
 
     },
     {
       field: "description",
       headerName: "Description",
-      width: 250,
+      width: 200,
+      editable: true,
+    },
+    {
+      field: "date",
+      headerName: "Date and Time",
+      width: 200,
+    },
+    {
+      field: "entry",
+      headerName: "Entry",
+      width: 90,
       editable: true,
     },
   
     {
       field: "amount",
       headerName: "Amount",
-      width: 120,
+      width: 100,
       editable: true,
     },
+    
+  
+  ];
+
+  export const newsColumns = [
+
     {
       field: "date",
-      headerName: "Date",
-      width: 120,
+      width: 100,
     },
     {
-      field: "status",
-      headerName: "Type",
-      width: 120,
-      editable: true,
+      field: "title",
+      width: 250,
+
+    },
+  
+    {
+      field: "body",
+      width: 400,
+    },
+     
+  
+  ];
+
+
+  export const revColumn = [
+    {
+      field: "name",
+      headerName: "Full Name",
+      width: 250,
+
+    },
+    {
+      field: "address",
+      headerName: "Address",
+      width: 250,
+
+    },
+  
+    {
+      field: "sdate",
+      headerName: "Start Date",
+      width: 100,
+
+    },
+    {
+      field: "edate",
+      headerName: "End Date",
+      width: 100,
+    },
+    {
+      field: "stime",
+      headerName: "Start Time",
+      width: 100,
+    },
+    {
+      field: "etime",
+      headerName: "End Time",
+      width: 100,
+    },
+    {
+      field: 'facilities',
+      headerName: 'Facilities',
+      width:120,
+    },
+    {
+      headerName: 'Status',
+      field: 'status',
+      width:120,
+      editable:true,
+      type: 'singleSelect',
+      valueOptions: ["Pending", 'Approved', 'Cancelled']
     }
-    
   
   ];

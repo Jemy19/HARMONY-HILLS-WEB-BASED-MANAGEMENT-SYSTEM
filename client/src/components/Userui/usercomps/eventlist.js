@@ -33,6 +33,7 @@ const Eventlist = ({title}) => {
       <div className="newContainer">
          <div style={{justifyContent:"space-between", height:"60px"}}className="top">
           <h1>{title}</h1>
+          <Link style={{padding:"10px", color:"green", border:"1px solid green", textDecoration:"none"}} to="/calendar">Back to Calendar</Link>
         </div>
         <div className = "record">
         {
@@ -41,9 +42,9 @@ const Eventlist = ({title}) => {
                       <h1 style ={{textAlign:"center", marginLeft:"10px", marginBottom:"10px",marginTop:"10px"}}>{items.title}</h1>
                       <label style ={{marginLeft:"10px",marginBottom:"10px", fontWeight:'500'}}>DETAILS: </label>
                       <p style ={{marginLeft:"20px",marginBottom:"10px"}}><span style ={{fontWeight:'500'}}>Organizer:</span> {items.name}</p>
-                      <p style ={{marginLeft:"20px",marginBottom:"10px"}}><span style ={{fontWeight:'500'}}>Date:</span> {items.date}</p>
-                      <p style ={{marginLeft:"20px",marginBottom:"10px"}}><span style ={{fontWeight:'500'}}>Start Time:</span>{items.time}</p>
-                    <p style ={{marginLeft:"20px", marginBottom:"10px"}}><span style ={{fontWeight:'500'}}>Location:</span>{items.location}</p>              
+                      <p style ={{marginLeft:"20px",marginBottom:"10px"}}><span style ={{fontWeight:'500'}}>Date: </span> {items.sdate}-{items.edate}</p>
+                      <p style ={{marginLeft:"20px",marginBottom:"10px"}}><span style ={{fontWeight:'500'}}>Start Time: </span>{items.stime}-{items.etime}</p>
+                    <p style ={{marginLeft:"20px", marginBottom:"10px"}}><span style ={{fontWeight:'500'}}>Location: </span>{items.location}</p>              
                 </div>
             ))
         }

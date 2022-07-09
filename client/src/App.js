@@ -4,7 +4,7 @@ import Admin from './pages/Home/Home'
 import Userlist from './pages/userList/Userlist'
 import {BrowserRouter, Routes, Route} from 'react-router-dom';
 import {userInputs, duesInputs,transaction, recordInputs} from './formSource'
-import New from './pages/new/new';
+import Newuser from './pages/new/new';
 import Update from './pages/new/update';
 
 import NewSidebar from './components/sidebar/newsidebar'
@@ -15,6 +15,8 @@ import Manageuser from './pages/userList/manage'
 import Newduess from './pages/MonthlyDues/Newduess'
 import Listdue from './pages/userList/listdue'
 import Invoice from './pages/Invoice/invoice'
+import Reservation from './pages/reservation/Reservation'
+import Reservationlist from './pages/reservation/Reservationlist'
 
 import Transactionlist from './pages/userList/transactionlist'
 
@@ -35,7 +37,7 @@ import Announcement from './components/Userui/usercomps/announcement';
 import Eventlist from './components/Userui/usercomps/eventlist';
 import Udash from './components/Userui/usercomps/userui';
 import Calendar from './components/Userui/usercomps/calendar';
-import Mohad from './components/MOHAD/Home';
+import Message from './components/MOHAD/Home';
 
 
 
@@ -63,14 +65,18 @@ function App() {
             <Route path="/login" element={<Login/>} />
             <Route path="/forgot-password" element= {<ForgotPassword/>} />
             <Route exact path = '/update/:id' element = {<AdminRoute><Update /></AdminRoute>}/>
+
+            <Route exact path = '/Reservation' element = {<AdminRoute><Reservation /></AdminRoute>}/>
+            <Route exact path = '/Reservationlist' element = {<PrivateRoute><Reservationlist/></PrivateRoute>}/>
+
             <Route exact path = '/' element = {<PrivateRoute><Userdash/></PrivateRoute>}/>
-            <Route exact path = '/Mohad' element = {<PrivateRoute><Mohad/></PrivateRoute>}/>
+            <Route exact path = '/Message' element = {<PrivateRoute><Message/></PrivateRoute>}/>
             <Route exact path = '/eventlist' element = {<PrivateRoute><Eventlist/></PrivateRoute>}/>
             <Route exact path = '/udash' element = {<PrivateRoute><Udash/></PrivateRoute>}/>
             <Route exact path = '/Admin' element = {<AdminRoute><Admin /></AdminRoute>}/>
             <Route exact path = 'manageusers' element ={<AdminRoute><Manageuser title=" Manage Users" /></AdminRoute>} />
-            <Route exact path = 'newuser' element = {<AdminRoute><New inputs={userInputs} title="Add New User" /></AdminRoute>}/>
-            <Route exact path = 'userList' element =  {<AdminRoute><Userlist /></AdminRoute>}/>
+            <Route exact path = 'Newuser' element = {<AdminRoute><Newuser inputs={userInputs} title="Add New User" /></AdminRoute>}/>
+            <Route exact path = '/userList' element =  {<AdminRoute><Userlist /></AdminRoute>}/>
 
             <Route exact path = '/newduess' element = {<AdminRoute><Newduess inputs={duesInputs} title="Add New Monthly Due"/></AdminRoute>}/>
             <Route exact path = '/listdue' element = {<AdminRoute><Listdue/></AdminRoute>}/>

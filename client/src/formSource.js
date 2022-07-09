@@ -1,12 +1,7 @@
 export const userInputs = [
     {
-      id: "name",
-      placeholder: "Username",
-      type: "text"
-    },
-    {
-      id: "displayName",
-      placeholder: "Name and surname",
+      id: "fullName",
+      placeholder: "Full Name",
       type: "text",
 
     },
@@ -17,9 +12,10 @@ export const userInputs = [
 
     },
     {
-      id: "phone",
-      placeholder: "Phone",
-      type: "number",
+      id: "mobilenumber",
+      placeholder: "Mobile Number",
+      type: "tel",
+      maxLength: "11",
 
     },
     {
@@ -33,12 +29,8 @@ export const userInputs = [
       type: "text",
 
     },
-    {
-      id: "country",
-      placeholder: "Country",
-      type: "text",
 
-    },
+
   ];
   
   export const duesInputs = [
