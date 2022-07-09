@@ -47,7 +47,7 @@ export default function UpdateProfile() {
                 <Form onSubmit={ handleSubmit }>
                     <Form.Group id="email">
                         <Form.Label>Email</Form.Label>
-                        <Form.Control type="email" ref={emailRef} required defaultValue={currentUser.email} />
+                        {currentUser.email}
                     </Form.Group>
                     <Form.Group id="password">
                         <Form.Label>Password</Form.Label>

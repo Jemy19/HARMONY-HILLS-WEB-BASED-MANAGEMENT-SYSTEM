@@ -44,23 +44,35 @@ const Newnavbar = (props) => {
       <Container fluid className="px-0">
         <div className="d-flex justify-content-between align-items-center w-100">
 
-          
           {currentUser.uid === "XXwOFj5YJpPHrZ69AqoEkmtpU0w2" ? (
             <>
-            <Nav.Link className="mb-0 font-small fw-bold text-white" href="/admin">HARMONY HILLS</Nav.Link>
+            <Nav.Link className="mb-0 h3 fw-bold text-white" href="/admin">HARMONY HILLS</Nav.Link>
             </>
             ) : (
             <>
-            <Nav.Link className="mb-0 font-small fw-bold text-white" href="/">HARMONY HILLS</Nav.Link>
-            <Nav.Link className="mb-0 font-small fw-bold text-white" href="/Message">Message</Nav.Link>
-            <Nav.Link className="mb-0 font-small fw-bold text-white" href="/Usertransactionlist">Transaction</Nav.Link>
-            <Nav.Link className="mb-0 font-small fw-bold text-white" href="/UserReservationlist">Reservationlist</Nav.Link>
-            <Nav.Link className="mb-0 font-small fw-bold text-white" href="/reports/addreports">Report</Nav.Link>
+            <Nav.Link className="mb-0 h3 fw-bold text-white" href="/">HARMONY HILLS</Nav.Link>
             </>
           )}
+          <div>
+          {currentUser.uid === "XXwOFj5YJpPHrZ69AqoEkmtpU0w2" ? (
+            <>
+
+            </>
+            ) : (
+            <>
+            <Nav className="me-auto">
+            <Nav.Link className="mb-0 font-small fw-bold text-white" href="/Message">Messages</Nav.Link>
+            <Nav.Link className="mb-0 font-small fw-bold text-white" href="/Usertransactionlist">Transaction</Nav.Link>
+            <Nav.Link className="mb-0 font-small fw-bold text-white" href="/UserReservationlist">Reports</Nav.Link>
+            <Nav.Link className="mb-0 font-small fw-bold text-white" href="/reports/addreports">Reports</Nav.Link>
+            </Nav>
+            </>
+          )}
+          </div>
+
           <Nav className="align-items-center">
             <Dropdown >
-              <Dropdown.Toggle as={Nav.Link} className="text-lighticon-notifications me-lg-3">
+              <Dropdown.Toggle as={Nav.Link} className="text-lighticon-notifications me-lg-3 text-white">
                 <span className="icon icon-sm ">
                   <FontAwesomeIcon icon={faBell} className="bell-shake text-white"/>
                  <span className="icon-badge rounded-circle unread-notifications" />
@@ -81,7 +93,7 @@ const Newnavbar = (props) => {
             </Dropdown>
 
             <Dropdown as={Nav.Item}>
-              <Dropdown.Toggle as={Nav.Link} className="pt-1 px-0">
+              <Dropdown.Toggle as={Nav.Link} className="pt-1 px-0 text-white">
                 <span className="mb-0 font-small fw-bold text-white">{currentUser.email}</span>
               </Dropdown.Toggle>
 

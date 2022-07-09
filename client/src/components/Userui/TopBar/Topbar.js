@@ -8,6 +8,8 @@ import LogoutIcon from '@mui/icons-material/Logout';
 import "./topbar.css"
 import { useLocation, useNavigate } from "react-router-dom";
 import { useAuth } from "../../../context/AuthContextlog"
+import { updateDoc, doc } from "firebase/firestore";
+import { db } from "../../../firebase";
 
 
 function Topbar() {
@@ -31,7 +33,9 @@ function Topbar() {
 
     async function handleLougout() {
         setError("")
-
+        await updateDoc(doc(db, "users", currentUser.uid), {
+          isOnline: false,
+        });
         try {
             await logout()
             navigate('/login')

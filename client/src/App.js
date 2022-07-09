@@ -49,7 +49,6 @@ function App() {
     <BrowserRouter>
       <AuthProvider>
         <NewNavbar />
-        <Topbar />
           <div className='App'>
             <NewSidebar />   
           <Routes>
@@ -60,9 +59,9 @@ function App() {
             } 
             />
             <Route path="/update-profile" element={
-              <AdminRoute>
+              <PrivateRoute>
                 <UpdateProfile />
-              </AdminRoute>
+              </PrivateRoute>
             } 
             />
             <Route path="/signup" element={<Signup/>} />
