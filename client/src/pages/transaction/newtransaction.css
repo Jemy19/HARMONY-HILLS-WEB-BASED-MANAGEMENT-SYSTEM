@@ -37,16 +37,6 @@ h1 {
     font-weight: bold;
 }
 
-
-.container{
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: space-around;
-    margin-left: 80px;
-    margin-top: 20px;
-}
-
 .transactionInput {
     width: 100%;
 }

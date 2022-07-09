@@ -38,6 +38,7 @@ function Reservation() {
             timeStamp: serverTimestamp(),
           })
           alert('Your Request Has Been Sent.')
+          navigate('/Reservationlist');
       };
 
     const handleInput = (e) =>{
@@ -106,6 +107,7 @@ function Reservation() {
               <option value="Parking">Parking</option>
               <option value="Swimming Pool">Swimming Pool</option>
               <option value="Party House">Party House</option>
+              <option value="Gym">Gym</option>
 
             </Form.Select>
         

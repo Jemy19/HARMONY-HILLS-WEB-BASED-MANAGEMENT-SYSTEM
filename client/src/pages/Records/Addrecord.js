@@ -66,7 +66,7 @@ function Addrecord({inputs, title}) {
         ...data,
         timeStamp: serverTimestamp(),
       });
-      navigate('/reports')
+      navigate('/')
 
   };
 
@@ -82,7 +82,7 @@ function Addrecord({inputs, title}) {
 
   return (
     <>
-    <div className="new">
+    <div className="new list">
       <div className="newContainer">
 
         <div className="top">
@@ -91,25 +91,15 @@ function Addrecord({inputs, title}) {
         <div className="recordbottom">
           <div className="recordright">
             <form className = "newform" onSubmit = {handleAdd}>
-              <div className="formInput">
-                <label style={{float:"right"}} className = "Imglabel"htmlFor="file">
-                  Image: <DriveFolderUploadOutlinedIcon className="icon" />
-                </label>
-                <input
-                  type="file"
-                  id="file"
-                  onChange ={(e) => setFile(e.target.files[0])}
-                  style={{ display: "none"}}
-                />
-              </div> 
               <label style = {{marginBottom:"-20px", marginRight:"440px"}}>Type</label>
                     <select className = "recordselect" name = "status" id = "status"  onChange = {handleInput}>
                         <option value = "Infrastrure">Infrastructure</option>
                         <option value = "Electrical" >Electrical</option>
                         <option value = "Plumbing" >Plumbing</option>
                         <option value = "People" >People</option>
+                        <option value = "Vehicle" >Vehicle</option>
                     </select>
-              {inputs.map((input) => (
+                {inputs.map((input) => (
                 <div className="formInput" key={input.id}>
                     
                   <label>{input.label}</label>
@@ -120,16 +110,29 @@ function Addrecord({inputs, title}) {
                     onChange={handleInput}
                   />
                 </div>
-              ))}
-              
-              <label style = {{marginBottom:"-20px"}}>Description</label>
+                ))}
+                
+                
+                <label style = {{marginBottom:"-20px"}}>Description</label>
                 <input style ={{border:"1px solid black", height:"100px"}}name = "description" id = "description"  onChange = {handleInput}/>
-            <button style = {{marginTop:"-10px"}}className = "newbutton" disabled={per !== null && per < 100} type="submit">
-                Send Report
-            </button>
+
+                <button style = {{marginTop:"-10px"}}className = "newbutton" disabled={per !== null && per < 100} type="submit">
+                  Send Report
+                </button>
             </form>
           </div>
           <div className="recordleft">
+              <div className="formInput">
+                  <label style={{float:"right"}} className = "Imglabel"htmlFor="file">
+                    Image: <DriveFolderUploadOutlinedIcon className="icon" />
+                  </label>
+                  <input
+                    type="file"
+                    id="file"
+                    onChange ={(e) => setFile(e.target.files[0])}
+                    style={{ display: "none"}}
+                  />
+                </div> 
             <img  className = "rcdimg"
               src={
                 file

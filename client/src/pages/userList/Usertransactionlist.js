@@ -5,11 +5,9 @@ const UserTransactionlist = ({title}) => {
   return (
     <>
     
-    <div className="list">
+    <div className="listuser">
       <div className="listContainer">
-      <div className="top">
-          <h1>{title}</h1>
-        </div>
+        
         <UserTransaction/>      
       </div>
     </div>

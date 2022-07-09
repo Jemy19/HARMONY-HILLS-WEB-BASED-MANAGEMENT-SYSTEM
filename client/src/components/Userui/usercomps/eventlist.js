@@ -40,7 +40,6 @@ const Eventlist = ({title}) => {
             data.map((items)=>(
                 <div style ={{display:""}}className = "recordcard">
                       <h1 style ={{textAlign:"center", marginLeft:"10px", marginBottom:"10px",marginTop:"10px"}}>{items.title}</h1>
-                      <label style ={{marginLeft:"10px",marginBottom:"10px", fontWeight:'500'}}>DETAILS: </label>
                       <p style ={{marginLeft:"20px",marginBottom:"10px"}}><span style ={{fontWeight:'500'}}>Organizer:</span> {items.name}</p>
                       <p style ={{marginLeft:"20px",marginBottom:"10px"}}><span style ={{fontWeight:'500'}}>Date: </span> {items.sdate}-{items.edate}</p>
                       <p style ={{marginLeft:"20px",marginBottom:"10px"}}><span style ={{fontWeight:'500'}}>Start Time: </span>{items.stime}-{items.etime}</p>

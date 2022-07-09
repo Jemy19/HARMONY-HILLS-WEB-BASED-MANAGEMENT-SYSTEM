@@ -40,7 +40,7 @@ function Transactionhome() {
         <>
     <div className="datatable">
       <div style={{marginLeft:"650px"}}className="datatableTitle">
-        <Link style={{textDecoration:"none", border:"none"}}to="/newuser" className="link" >
+        <Link style={{textDecoration:"none", border:"none"}}to="/transactionlist" className="link" >
           View All Transaction
         </Link>
       </div>

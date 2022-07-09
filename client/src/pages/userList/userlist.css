@@ -4,6 +4,11 @@
     margin-right: 200px;
     margin-left: 200px;
 }
+.listuser {
+    display: flex;
+    width: 50%;
+    margin-left: 500px;
+}
 .listContainer {
     flex: 4;
-  }
+}

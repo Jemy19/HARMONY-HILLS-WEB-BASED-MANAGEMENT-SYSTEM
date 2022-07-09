@@ -52,7 +52,7 @@ const Reservationlist = ({title}) => {
   return (
     <>
     
-    <div className="list">
+    <div className="listuser">
       <div className="listContainer">
       <div className="top">
           <h1>{title}</h1>

@@ -9,6 +9,7 @@ import Update from './pages/new/update';
 
 import NewSidebar from './components/sidebar/newsidebar'
 import NewNavbar from './components/Userui/TopBar/newnavbar'
+import Topbar from './components/Userui/TopBar/Topbar'
 
 import Manageuser from './pages/userList/manage'
 
@@ -48,6 +49,7 @@ function App() {
     <BrowserRouter>
       <AuthProvider>
         <NewNavbar />
+        <Topbar />
           <div className='App'>
             <NewSidebar />   
           <Routes>

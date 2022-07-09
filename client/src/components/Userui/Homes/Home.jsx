@@ -115,12 +115,12 @@ function Home() {
             <small>{item.date}</small>
           </div>
           <p className="mb-1">{item.body}</p>
-          <small>Donec id elit non mi porta.</small>
+          <small></small>
         </a>
       </div>
       </Card.Body>
       ))}
-      <Card.Footer className="text-muted">2 days ago</Card.Footer>
+      <Card.Footer className="text-muted"></Card.Footer>
     </Card>
 
     <Card as={Col} className="text-center">
@@ -131,15 +131,15 @@ function Home() {
         <a href="#" className="list-group-item list-group-item-action">
           <div className="d-flex w-100 justify-content-between">
             <h5 className="mb-1">{item.title}</h5>
-            <small>{item.date}</small>
+            <small>{item.edate}</small>
           </div>
-          <p className="mb-1">{item.body}</p>
-          <small>Donec id elit non mi porta.</small>
+          <p className="mb-1">{item.location}</p>
+          <small></small>
         </a>
       </div>
       </Card.Body>
       ))}
-      <Card.Footer className="text-muted">2 days ago</Card.Footer>
+      <Card.Footer className="text-muted"></Card.Footer>
     </Card>
       </Row>
     </div>

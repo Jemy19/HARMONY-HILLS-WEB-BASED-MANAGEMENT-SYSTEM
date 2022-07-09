@@ -40,7 +40,7 @@ function Userhome() {
         <>
     <div className="datatable">
       <div style={{marginLeft:"500px"}}className="datatableTitle">
-        <Link style={{textDecoration:"none", border:"none",marginleft:"500px"}} to="/newuser" className="link" >
+        <Link style={{textDecoration:"none", border:"none",marginleft:"500px"}} to="/userList" className="link" >
           View All Users
         </Link>
       </div>
