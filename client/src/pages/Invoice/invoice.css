@@ -12,9 +12,6 @@ code {
     monospace;
 }
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
 
 @import url("https://fonts.googleapis.com/css2?family=Reem+Kufi:wght@400;700&display=swap");
 
@@ -34,11 +31,11 @@ code {
 }
 
 ::-webkit-scrollbar-track {
-  @apply shadow rounded-lg bg-teal-100;
+  @apply shadow rounded-lg bg-slate-100;
 }
 
 ::-webkit-scrollbar-thumb {
-  @apply bg-teal-400 rounded-lg hover:bg-teal-500 transition-all duration-200;
+  @apply bg-gray-400 rounded-lg hover:bg-gray-500 transition-all duration-200;
 }
 
 .beta__tag {

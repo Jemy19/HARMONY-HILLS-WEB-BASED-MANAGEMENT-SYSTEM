@@ -73,7 +73,7 @@ export default function Signup() {
                                             className="form-control rounded-pill border-0 shadow-sm px-4 text-primary"/>
                                         </div>
                                         <button disabled={loading} type="submit" className="btn btn-primary btn-block text-uppercase mb-2 rounded-pill shadow-sm">Sign Up</button>
-                                        <div>Already have an acount? <Link to="/login">Log In</Link></div>
+                                        <div>Already have an acount? <Link style={{ cursor: "pointer", textDecoration: 'none' }} to="/login">Log In</Link></div>
                                     </form>
                                 </div>
                             </div>

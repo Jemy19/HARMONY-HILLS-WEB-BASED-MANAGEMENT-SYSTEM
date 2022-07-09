@@ -61,8 +61,8 @@ export default function Login() {
                                             <input id="inputPassword" type="password" ref={passwordRef} placeholder="Password" required="" className="form-control rounded-pill border-0 shadow-sm px-4 text-primary"/>
                                         </div>
                                         <button type="submit" className="btn btn-primary btn-block text-uppercase mb-2 rounded-pill shadow-sm">Sign in</button>
-                                        <div>Need an account?  <Link to="/signup">Sign Up</Link></div>
-                                        <Link to="/forgot-password">Forgot Password?</Link>
+                                        <div>Don't have an account?  <Link style={{ cursor: "pointer", textDecoration: 'none' }} to="/signup">Sign Up</Link></div>
+                                        <Link style={{ cursor: "pointer", textDecoration: 'none' }} to="/forgot-password">Forgot Password?</Link>
                                     </form>
                                 </div>
                             </div>

@@ -45,8 +45,8 @@ export default function ForgotPassword() {
                                             <input id="inputEmail" type="email" ref={emailRef} placeholder="Email address" required="" autoFocus="" className="form-control rounded-pill border-0 shadow-sm px-4"/>
                                         </div>
                                         <button disabled={loading} type="submit" className="btn btn-primary btn-block text-uppercase mb-2 rounded-pill shadow-sm">Reset Password</button>
-                                        <div><Link to="/login">Login</Link> </div>
-                                        <div>Need an account?  <Link to="/signup">Sign Up</Link></div>
+                                        <div><Link style={{ cursor: "pointer", textDecoration: 'none' }} to="/login">Login</Link> </div>
+                                        <div>Need an account?  <Link style={{ cursor: "pointer", textDecoration: 'none' }} to="/signup">Sign Up</Link></div>
                                     </form>
                                 </div>
                             </div>

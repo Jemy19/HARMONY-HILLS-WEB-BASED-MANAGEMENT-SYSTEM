@@ -98,7 +98,7 @@ export const userColumns = [
 
   export const peopleColumns = [
     {
-      field: "name",
+      field: "fullName",
       headerName: "Users",
       width: 250,
     },
