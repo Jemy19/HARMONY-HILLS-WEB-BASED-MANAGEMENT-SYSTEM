@@ -78,62 +78,62 @@ function Calendar({title}) {
     />
     </div>
     </div>
-    <div>
-                {
-                    popup?
-                    <div style={{padding:"20px", backgroundColor:"lightblue", height:"75%"}}>
-                        <div style={{padding:"20px",marginTop:"100px",backgroundColor:"lightblue"}}>
-                            <div className="col-lg-10 col-xl-7 mx-auto">
-                                <form onSubmit={handleSubmit}>
-                                <h1 style={{color:"black"}}>Event Registration</h1>
-                                <label>Full Name</label>
-                                <div className="form-group mb-3">
-                                            <input id="name" type="text" required="" 
-                                            autoFocus="" className="form-control rounded-pill border-0 shadow-sm px-4" onChange={handleInput}/>
-                                        </div>
-                                <label>Email</label>
-                                <div className="form-group mb-3">
-                                            <input id="email" type="email" required="" 
-                                            autoFocus="" className="form-control rounded-pill border-0 shadow-sm px-4" onChange={handleInput}/>
-                                        </div>
-                                <label>Title</label>
-                                <div className="form-group mb-3">
-                                            <input id="title" type="text"  required="" 
-                                            autoFocus="" className="form-control rounded-pill border-0 shadow-sm px-4" onChange={handleInput}/>
+      <div>
+        {
+            popup?
+            <div style={{padding:"20px", backgroundColor:"lightblue", height:"75%"}}>
+                <div style={{padding:"20px",marginTop:"100px",backgroundColor:"lightblue"}}>
+                    <div className="col-lg-10 col-xl-7 mx-auto">
+                        <form onSubmit={handleSubmit}>
+                        <h1 style={{color:"black"}}>Event Registration</h1>
+                        <label>Full Name</label>
+                        <div className="form-group mb-3">
+                                    <input id="name" type="text" required="" 
+                                    autoFocus="" className="form-control rounded-pill border-0 shadow-sm px-4" onChange={handleInput}/>
                                 </div>
-                                <label>Date Scheduled</label>
-                                <div className="form-group mb-3">
-                                            <input id="sdate" type="text"  required="" 
-                                            autoFocus="" className="form-control rounded-pill border-0 shadow-sm px-4" value = {date} onInput={handleInput}/>
+                        <label>Email</label>
+                        <div className="form-group mb-3">
+                                    <input id="email" type="email" required="" 
+                                    autoFocus="" className="form-control rounded-pill border-0 shadow-sm px-4" onChange={handleInput}/>
                                 </div>
-                                <label>Date End</label>
-                                <div className="form-group mb-3">
-                                            <input id="edate" type="date"  required="" 
-                                            autoFocus="" className="form-control rounded-pill border-0 shadow-sm px-4" onInput={handleInput}/>
-                                </div>
-                                <label>Start Time</label>
-                                <div className="form-group mb-3">
-                                            <input id="stime" type="time" required="" 
-                                            autoFocus="" className="form-control rounded-pill border-0 shadow-sm px-4" onChange={handleInput}/>
-                                        </div>
-                                <label>End Time</label>
-                                <div className="form-group mb-3">
-                                            <input id="etime" type="time" required="" 
-                                            autoFocus="" className="form-control rounded-pill border-0 shadow-sm px-4" onChange={handleInput}/>
-                                </div>
-                                <label>Location</label>
-                                <div className="form-group mb-3">
-                                            <input id="location" type="text" required="" 
-                                            autoFocus="" className="form-control rounded-pill border-0 shadow-sm px-4" onChange={handleInput}/>
-                                        </div>
-                                    <button className="btn btn-secondary btn-block text-uppercase mb-2 rounded-pill shadow-sm" onClick={closePopup}>Cancel</button>
-                                    <button type="submit" className="btn btn-primary btn-block text-uppercase mb-2 rounded-pill shadow-sm">Submit</button>
-                                </form>
-                                </div>
+                        <label>Title</label>
+                        <div className="form-group mb-3">
+                                    <input id="title" type="text"  required="" 
+                                    autoFocus="" className="form-control rounded-pill border-0 shadow-sm px-4" onChange={handleInput}/>
                         </div>
-                    </div>:""
-                }
-            </div>
+                        <label>Date Scheduled</label>
+                        <div className="form-group mb-3">
+                                    <input id="sdate" type="text"  required="" 
+                                    autoFocus="" className="form-control rounded-pill border-0 shadow-sm px-4" value = {date} onInput={handleInput}/>
+                        </div>
+                        <label>Date End</label>
+                        <div className="form-group mb-3">
+                                    <input id="edate" type="date"  required="" 
+                                    autoFocus="" className="form-control rounded-pill border-0 shadow-sm px-4" onInput={handleInput}/>
+                        </div>
+                        <label>Start Time</label>
+                        <div className="form-group mb-3">
+                                    <input id="stime" type="time" required="" 
+                                    autoFocus="" className="form-control rounded-pill border-0 shadow-sm px-4" onChange={handleInput}/>
+                                </div>
+                        <label>End Time</label>
+                        <div className="form-group mb-3">
+                                    <input id="etime" type="time" required="" 
+                                    autoFocus="" className="form-control rounded-pill border-0 shadow-sm px-4" onChange={handleInput}/>
+                        </div>
+                        <label>Location</label>
+                        <div className="form-group mb-3">
+                                    <input id="location" type="text" required="" 
+                                    autoFocus="" className="form-control rounded-pill border-0 shadow-sm px-4" onChange={handleInput}/>
+                                </div>
+                            <button className="btn btn-secondary btn-block text-uppercase mb-2 rounded-pill shadow-sm" onClick={closePopup}>Cancel</button>
+                            <button type="submit" className="btn btn-primary btn-block text-uppercase mb-2 rounded-pill shadow-sm">Submit</button>
+                        </form>
+                        </div>
+                </div>
+            </div>:""
+        }
+    </div>
     </>
   )
 }

@@ -16,6 +16,7 @@ import Dropdown from 'react-bootstrap/Dropdown';
 const initialState = {
   name: "",
   address: "",
+  phoneNumber: "",
   date:"",
   due:"",
   amount:"",
@@ -26,7 +27,7 @@ function Newdues({title}) {
     const [data,setData] = useState(initialState)
     const dueid = uuid();
     const navigate = useNavigate()
-    const { name, address, due, date,amount} = data
+    const { name, address, phoneNumber, due, date,amount} = data
     const handleAdd = async (e) => {
     
         e.preventDefault();
@@ -35,7 +36,7 @@ function Newdues({title}) {
             ...data,
             timeStamp: serverTimestamp(),
           })
-          navigate('/duelist')
+          navigate('/listdue')
       };
 
     const handleInput = (e) =>{
@@ -52,10 +53,10 @@ function Newdues({title}) {
 
   return (
     <>
-    <div className="newContainer marginTop -245px">
-    <Container id="MonthlyDueForm-container" className="d-grid h-100">
+    <div className="newContainer">
+    <Container id="MonthlyDueForm-container" className="d-grid">
     <Form id="MonthlyDueForm-Form" className="text-center w-100"   onSubmit = {handleAdd}>
-    <h3 style={{marginTop:"-245px", marginBottom:"10px"}}>Payable Form</h3>
+    <h3>Payable Form</h3>
 
     <Form.Group controlId="Fullname">
     <FloatingLabel controlId="floatingInput" label="Full Name" className="mb-3">
@@ -69,9 +70,9 @@ function Newdues({title}) {
           </FloatingLabel>
         </Form.Group>
         
-        <Form.Group className="mb-3" controlId="Address">
+        <Form.Group className="mb-3" controlId="phoneNumber">
         <FloatingLabel controlId="floatingInput" label="Contact Number" className="mb-3">
-          <Form.Control type="address" size="lg" placeholder="Address" autoComplete="address" className="position-relative" value = {address} id='address' onChange = {handleInput} />
+          <Form.Control type="tel" size="lg" placeholder="Address" autoComplete="address" className="position-relative" maxLength = "11" value = {phoneNumber} id='phoneNumber'  onChange = {handleInput} />
           </FloatingLabel>
         </Form.Group>
         

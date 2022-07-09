@@ -1,5 +1,5 @@
 import { DataGrid } from "@mui/x-data-grid";
-import { revColumn, userRows } from "../../datatablesources";
+import { userrevColumn, userRows } from "../../datatablesources";
 import { Link, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import {
@@ -48,36 +48,14 @@ const Reservationlist = ({title}) => {
         console.log(err);
       }
     };
-  
-    const actionColumn = [
-      {
-        field: "action",
-        headerName: "Action",
-        width: 200,
-        renderCell: (params) => {
-          return (
-            <div className="cellAction">
-              <div
-                className="deleteButton"
-                onClick={() => handleDelete(params.row.id)}
-              >
-                Delete
-              </div>
-            </div>
-          );
-        },
-      },
-    ];
-
 
   return (
     <>
     
     <div className="list">
       <div className="listContainer">
-      <div style={{justifyContent:"space-between"}} className="top">
+      <div className="top">
           <h1>{title}</h1>
-          <Link style={{padding:"10px", color:"green", border:"1px solid green", textDecoration:"none"}} to="/Reservation">Go back</Link>
         </div>
         <>
     <div className="datatable">
@@ -87,10 +65,9 @@ const Reservationlist = ({title}) => {
       <DataGrid
         className="datagrid"
         rows={data}
-        columns={revColumn.concat(actionColumn)}
+        columns={userrevColumn}
         pageSize={9}
         rowsPerPageOptions={[9]}
-        checkboxSelection 
         experimentalFeatures={{ newEditingApi: true }}
       />
     </div>

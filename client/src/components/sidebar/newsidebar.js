@@ -43,7 +43,7 @@ const Newsidebar= () => {
   else if(location.pathname === "/reports/addreports"){
     return null
   }
-  else if(location.pathname === "/Reservationlist"){
+  else if(location.pathname === "/UserReservationlist"){
     return null
   }
   

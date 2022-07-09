@@ -43,12 +43,12 @@ const Newnavbar = (props) => {
   return (
     <Navbar variant="light" className="ps-0 pe-2 pb-0">
       <Container fluid className="px-0">
-        <div className="d-flex justify-content-between w-100">
+        <div className="d-flex justify-content-between align-items-center w-100">
 
           <Nav.Link href="/admin">HARMONY HILLS</Nav.Link>
           <Nav.Link href="/Message">Message</Nav.Link>
           <Nav.Link href="/Tba">Transaction</Nav.Link>
-          <Nav.Link href="/Reservationlist">Reservationlist</Nav.Link>
+          <Nav.Link href="/UserReservationlist">Reservationlist</Nav.Link>
           <Nav.Link href="/reports/addreports">Report</Nav.Link>
           
           
@@ -82,12 +82,13 @@ const Newnavbar = (props) => {
                   </div>
                 </div>
               </Dropdown.Toggle>
-              <Dropdown.Menu className="user-dropdown dropdown-menu-right mt-2">
-    
-                <Dropdown.Item className="fw-bold" onClick={handleLougout}>
-                  <FontAwesomeIcon icon={faSignOutAlt} className="text-danger me-2" /> Logout
-                </Dropdown.Item>
+                <Dropdown.Menu className="user-dropdown dropdown-menu-right mt-2">
+                  <Dropdown.Item className="fw-bold" onClick={handleLougout}>
+                    <FontAwesomeIcon icon={faSignOutAlt} className="text-danger me-2" /> Logout
+                  </Dropdown.Item>
               </Dropdown.Menu>
+              
+              
             </Dropdown>
           </Nav>
         </div>

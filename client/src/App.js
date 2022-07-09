@@ -17,6 +17,7 @@ import Listdue from './pages/userList/listdue'
 import Invoice from './pages/Invoice/invoice'
 import Reservation from './pages/reservation/Reservation'
 import Reservationlist from './pages/reservation/Reservationlist'
+import UserReservationlist from './pages/reservation/UserReservationlist'
 
 import Transactionlist from './pages/userList/transactionlist'
 
@@ -67,7 +68,8 @@ function App() {
             <Route exact path = '/update/:id' element = {<AdminRoute><Update /></AdminRoute>}/>
 
             <Route exact path = '/Reservation' element = {<AdminRoute><Reservation /></AdminRoute>}/>
-            <Route exact path = '/Reservationlist' element = {<PrivateRoute><Reservationlist/></PrivateRoute>}/>
+            <Route exact path = '/Reservationlist' element = {<AdminRoute><Reservationlist/></AdminRoute>}/>
+            <Route exact path = '/UserReservationlist' element = {<PrivateRoute><UserReservationlist/></PrivateRoute>}/>
 
             <Route exact path = '/' element = {<PrivateRoute><Userdash/></PrivateRoute>}/>
             <Route exact path = '/Message' element = {<PrivateRoute><Message/></PrivateRoute>}/>
@@ -87,7 +89,7 @@ function App() {
             <Route exact path = '/reports' element = {<AdminRoute><Record title="Reports"/></AdminRoute>}/>
             <Route exact path = '/reports/addreports' element = {<PrivateRoute><Addrecord inputs={recordInputs} title="Generate Reports"/></PrivateRoute>}/>
             <Route exact path = '/Announcement' element = {<AdminRoute><Announcement /></AdminRoute>}/>
-            <Route exact path = '/Calendar' element = {<AdminRoute><Calendar/></AdminRoute>}/>
+        
             <Route exact path = '/newtransactions' element = {<AdminRoute><Newtransactions inputs={transaction} title="Add New Transaction"/></AdminRoute>}/>
             
           </Routes>

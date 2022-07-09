@@ -238,4 +238,48 @@ export const revColumn = [
     valueOptions: ["Pending", 'Approved', 'Cancelled']
   }
 
+]
+
+export const userrevColumn = [
+  {
+    field: "name",
+    headerName: "Full Name",
+    width: 250,
+
+  },
+  {
+    field: 'facilities',
+    headerName: 'Facilities',
+    width:150,
+  },
+  {
+    field: "sdate",
+    headerName: "Start Date",
+    width: 100,
+
+  },
+  {
+    field: "edate",
+    headerName: "End Date",
+    width: 100,
+  },
+  {
+    field: "stime",
+    headerName: "Start Time",
+    width: 100,
+  },
+  {
+    field: "etime",
+    headerName: "End Time",
+    width: 100,
+  },
+  {
+    headerName: 'Status',
+    field: 'status',
+    width:120,
+    editable:true,
+    type: 'singleSelect',
+    valueOptions: ["Pending", 'Approved', 'Cancelled']
+  }
+
 ];

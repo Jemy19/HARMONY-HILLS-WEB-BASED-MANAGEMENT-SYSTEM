@@ -8,6 +8,7 @@ import Container from 'react-bootstrap/esm/Container';
 import { Form, Row, Col } from 'react-bootstrap';
 import Button from 'react-bootstrap/esm/Button';
 import FloatingLabel from 'react-bootstrap/FloatingLabel';
+import {Link} from 'react-router-dom'
 
 
 const initialState = {
@@ -52,8 +53,14 @@ function Reservation() {
   
   return (
     <>
-    <Container id="MonthlyDueForm-container" className="d-grid h-100">
-<Form id="MonthlyDueForm-Form" className="text-center w-100"   onSubmit = {handleAdd}>
+    <div className="new">
+      <div className="newContainer">
+    <div style={{justifyContent:"space-between"}}className="top">
+          <h1>Reservation Form</h1>
+          <Link style={{padding:"10px", color:"green", border:"1px solid green", textDecoration:"none"}} to="/Reservationlist">View Rerservations</Link>
+    </div>
+    <Container id="MonthlyDueForm-container" className="d-grid">
+    <Form id="MonthlyDueForm-Form" className="text-center w-100"   onSubmit = {handleAdd}>
     <h3>Reservation Form</h3>
 
     <Form.Group controlId="Fullname">
@@ -106,8 +113,10 @@ function Reservation() {
         <div className="d-grid">
           <Button variant="primary" size="lg" type = 'submit'>Send Request</Button>
         </div>
-</Form>
+    </Form>
     </Container>
+    </div>
+    </div>
     </>
   );
 }
