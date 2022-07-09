@@ -11,6 +11,7 @@ export const Routes = {
     Message: {path:'/Message'},
     Events: {path:"/calendar"},
     Announcement: {path:"/Announcement"},
+    Reports: {path:"/reports"},
 
 
 }

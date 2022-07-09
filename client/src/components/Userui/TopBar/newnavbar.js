@@ -44,12 +44,14 @@ const Newnavbar = (props) => {
     <Navbar variant="light" className="ps-0 pe-2 pb-0">
       <Container fluid className="px-0">
         <div className="d-flex justify-content-between w-100">
-          <div className="d-flex align-items-center">
-            <Form className="navbar-search">
-              <Form.Group id="topbarSearch">
-              </Form.Group>
-            </Form>
-          </div>
+
+          <Nav.Link href="/admin">HARMONY HILLS</Nav.Link>
+          <Nav.Link href="/Message">Message</Nav.Link>
+          <Nav.Link href="/Tba">Transaction</Nav.Link>
+          <Nav.Link href="/Reservationlist">Reservationlist</Nav.Link>
+          <Nav.Link href="/reports/addreports">Report</Nav.Link>
+          
+          
           <Nav className="align-items-center">
             <Dropdown >
               <Dropdown.Toggle as={Nav.Link} className="text-lighticon-notifications me-lg-3">
@@ -76,7 +78,7 @@ const Newnavbar = (props) => {
                 <div className="media d-flex align-items-center">
                   <Image className="user-avatar md-avatar rounded-circle" />
                   <div className="media-body ms-2 text-dark align-items-center d-none d-lg-block">
-                    <span className="mb-0 font-small fw-bold text-white">Admin</span>
+                    <span className="mb-0 font-small fw-bold text-white">{currentUser.email}</span>
                   </div>
                 </div>
               </Dropdown.Toggle>

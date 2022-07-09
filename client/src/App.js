@@ -85,7 +85,7 @@ function App() {
             <Route exact path = '/transactionlist' element = {<AdminRoute><Transactionlist title="Transaction Records"/></AdminRoute>}/>
 
             <Route exact path = '/reports' element = {<AdminRoute><Record title="Reports"/></AdminRoute>}/>
-            <Route exact path = '/reports/addreports' element = {<AdminRoute><Addrecord inputs={recordInputs} title="Generate Reports"/></AdminRoute>}/>
+            <Route exact path = '/reports/addreports' element = {<PrivateRoute><Addrecord inputs={recordInputs} title="Generate Reports"/></PrivateRoute>}/>
             <Route exact path = '/Announcement' element = {<AdminRoute><Announcement /></AdminRoute>}/>
             <Route exact path = '/Calendar' element = {<AdminRoute><Calendar/></AdminRoute>}/>
             <Route exact path = '/newtransactions' element = {<AdminRoute><Newtransactions inputs={transaction} title="Add New Transaction"/></AdminRoute>}/>

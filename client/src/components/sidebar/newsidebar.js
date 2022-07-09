@@ -40,6 +40,13 @@ const Newsidebar= () => {
   else if(location.pathname === "/Message"){
     return null
   }
+  else if(location.pathname === "/reports/addreports"){
+    return null
+  }
+  else if(location.pathname === "/Reservationlist"){
+    return null
+  }
+  
   
   const CollapsableNavItem = (props) => {
     const { eventKey, title, icon, children = null } = props;
@@ -135,6 +142,7 @@ const Newsidebar= () => {
               <NavItem as={Link} title="Message"  icon={faEnvelope} link={Routes.Message.path}/>
               <NavItem as={Link} title="Events"  icon={faCalendar} link={Routes.Events.path}/>
               <NavItem as={Link} title="Announcement"  icon={faBullhorn} link={Routes.Announcement.path}/>
+              <NavItem as={Link} title="Reports"  icon={faBullhorn} link={Routes.Reports.path}/>
               <Dropdown.Divider className="my-3 border-indigo" />
             </Nav>
           </div>
