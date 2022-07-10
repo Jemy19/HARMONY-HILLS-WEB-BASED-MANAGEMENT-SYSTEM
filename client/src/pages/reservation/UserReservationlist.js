@@ -50,30 +50,27 @@ const Reservationlist = ({title}) => {
     };
 
   return (
-    <>
-    
-    <div className="listuser">
-      <div className="listContainer">
-      <div className="top">
-          <h1>{title}</h1>
+    <> 
+      <div className="listuser">
+        <div className="listContainer">
+            <h4>{title}</h4>
+            <>
+              <div className="datatable">
+                <h4>
+                  Reservation List
+                </h4>
+                <DataGrid
+                  className="datagrid"
+                  rows={data}
+                  columns={userrevColumn}
+                  pageSize={9}
+                  rowsPerPageOptions={[9]}
+                  experimentalFeatures={{ newEditingApi: true }}
+                />
+              </div>
+            </>
         </div>
-        <>
-    <div className="datatable">
-      <div className="datatableTitle">
-        Reservation List
       </div>
-      <DataGrid
-        className="datagrid"
-        rows={data}
-        columns={userrevColumn}
-        pageSize={9}
-        rowsPerPageOptions={[9]}
-        experimentalFeatures={{ newEditingApi: true }}
-      />
-    </div>
-    </>
-      </div>
-    </div>
     </>
   )
 }

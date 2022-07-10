@@ -7,10 +7,12 @@ import { TextareaAutosize } from '@material-ui/core';
 import Announcementlist from './announcementlist';
 import './announcement.css'
 
+
 function Announcement({inputs, title}) {
     const [data,setData] = useState({})
     const announcementId = uuid();
     const handleAdd = async (e) => {
+    
     
         e.preventDefault();
 
@@ -19,6 +21,7 @@ function Announcement({inputs, title}) {
             timeStamp: serverTimestamp(),
           })
       };
+      
 
     const handleInput = (e) =>{
         const id = e.target.id
@@ -40,7 +43,7 @@ function Announcement({inputs, title}) {
         <form className = "newsform" onSubmit = {handleAdd}>
             <h1 style = {{color:"black", fontSize:"30px",textAlign:'center',fontSize:'40px'}}>Announcement</h1>
              <input style = {{width:'80%'}} placeHolder = 'title' className='newsinput' type='text' id='title' onChange={handleInput} />
-            <input style = {{marginLeft:"-150px",width:'50%'}} placeHolder = 'date' className='newsinput' type='date' id='date' onChange={handleInput} />
+             <input style = {{marginLeft:"-150px",width:'50%'}} placeHolder = 'date' className='newsinput' type='date' id='date' onChange={handleInput} />
             <textarea placeHolder = 'Details...'style = {{border:'1px solid black', width:"100%",padding:"10px"}}rows='7' cols = '1000;' className='' type='text' id='body' onChange={handleInput} />     
         <button  className = "btn btn-primary btn-block text-uppercase mb-2 rounded-pill shadow-sm" type="submit">
              Submit

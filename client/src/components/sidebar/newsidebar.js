@@ -49,6 +49,9 @@ const Newsidebar= () => {
   else if(location.pathname === "/Usertransactionlist"){
     return null
   }
+  else if(location.pathname === "/UserEventlist"){
+    return null
+  }
   
   
   const CollapsableNavItem = (props) => {
@@ -134,14 +137,14 @@ const Newsidebar= () => {
                     <NavItem  as={Link} title="User List"  link = {Routes.Users.path} icon={faUsers} />
                     <NavItem as={Link} title="Add Users" link={Routes.AddUser.path}  icon={faUserPlus} />
               </CollapsableNavItem>
-              <NavItem as={Link} title="Transaction" icon={faBriefcase} link={Routes.Transaction.path}/>
+              <NavItem as={Link} title="Message"  icon={faEnvelope} link={Routes.Message.path}/>
               <NavItem as={Link} title="Invoice"  icon={faInbox} link={Routes.Invoice.path}/>
+              <NavItem as={Link} title="Transaction" icon={faBriefcase} link={Routes.Transaction.path}/>
               <CollapsableNavItem eventKey="" title="Payables" icon={faCreditCard}>
-                    <NavItem  as={Link} title="Monthly Dues" icon={faListAlt} link={Routes.MonthlyDues.path} />
+                    <NavItem  as={Link} title="Monthly and Payable Dues" icon={faListAlt} link={Routes.MonthlyDues.path} />
                     <NavItem  as={Link} title="Add Payables" icon={faPlusSquare} link={Routes.Payable.path} />
               </CollapsableNavItem>
               <NavItem as={Link} title="Reservations"  icon={faInbox} link={Routes.Reservation.path}/>
-              <NavItem as={Link} title="Message"  icon={faEnvelope} link={Routes.Message.path}/>
               <NavItem as={Link} title="Events"  icon={faCalendar} link={Routes.Events.path}/>
               <NavItem as={Link} title="Announcement"  icon={faBullhorn} link={Routes.Announcement.path}/>
               <NavItem as={Link} title="Reports"  icon={faBullhorn} link={Routes.Reports.path}/>

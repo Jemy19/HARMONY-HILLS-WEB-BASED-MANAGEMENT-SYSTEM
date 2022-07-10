@@ -38,6 +38,7 @@ import { AuthProvider } from "./context/AuthContextlog";
 import Userdash from "./components/Userui/Homes/Home";
 import Announcement from './components/Userui/usercomps/announcement';
 import Eventlist from './components/Userui/usercomps/eventlist';
+import UserEventlist from './components/Userui/usercomps/Usereventlist';
 import Udash from './components/Userui/usercomps/userui';
 import Calendar from './components/Userui/usercomps/calendar';
 import Message from './components/MOHAD/Home';
@@ -73,6 +74,7 @@ function App() {
             <Route exact path = '/Reservationlist' element = {<AdminRoute><Reservationlist/></AdminRoute>}/>
             <Route exact path = '/UserReservationlist' element = {<PrivateRoute><UserReservationlist/></PrivateRoute>}/>
             <Route exact path = '/Usertransactionlist' element = {<PrivateRoute><UserTransactionlist/></PrivateRoute>}/>
+            <Route exact path = '/UserEventlist' element = {<PrivateRoute><UserEventlist/></PrivateRoute>}/>
 
             <Route exact path = '/' element = {<PrivateRoute><Userdash/></PrivateRoute>}/>
             <Route exact path = '/Message' element = {<PrivateRoute><Message/></PrivateRoute>}/>

@@ -91,11 +91,6 @@ function Calendar({title}) {
                                     <input id="name" type="text" required="" 
                                     autoFocus="" className="form-control rounded-pill border-0 shadow-sm px-4" onChange={handleInput}/>
                                 </div>
-                        <label>Email</label>
-                        <div className="form-group mb-3">
-                                    <input id="email" type="email" required="" 
-                                    autoFocus="" className="form-control rounded-pill border-0 shadow-sm px-4" onChange={handleInput}/>
-                                </div>
                         <label>Title</label>
                         <div className="form-group mb-3">
                                     <input id="title" type="text"  required="" 

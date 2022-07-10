@@ -32,9 +32,8 @@ const Eventlist = ({title}) => {
       <div className="listuser">
       <div className="newContainer">
          <div style={{justifyContent:"space-between", height:"60px"}}className="top">
-          <h1>{title}</h1>
-          <Link style={{padding:"10px", color:"green", border:"1px solid green", textDecoration:"none"}} to="/calendar">Back to Calendar</Link>
-        </div>
+          <h3>Events</h3>
+          </div>
         <div className = "record">
         {
             data.map((items)=>(

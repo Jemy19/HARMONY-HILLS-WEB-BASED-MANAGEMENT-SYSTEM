@@ -49,7 +49,7 @@ const Transaction = () => {
   return (
     <>
     <div className="datatable">
-
+      <h4>Transaction list</h4>
       <DataGrid
         className="datagrid"
         rows={data}

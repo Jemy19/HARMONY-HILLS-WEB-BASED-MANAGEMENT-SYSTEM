@@ -7,6 +7,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 import { useAuth } from "../../../context/AuthContextlog"
 import { updateDoc, doc } from "firebase/firestore";
 import { db } from "../../../firebase";
+import "./topbar.css"
 
 const Newnavbar = (props) => {
   const[error, setError]= useState("")
@@ -61,9 +62,11 @@ const Newnavbar = (props) => {
             ) : (
             <>
             <Nav className="me-auto">
+            <Nav.Link className="mb-0 font-small fw-bold text-white" href="/">Home</Nav.Link>
             <Nav.Link className="mb-0 font-small fw-bold text-white" href="/Message">Messages</Nav.Link>
             <Nav.Link className="mb-0 font-small fw-bold text-white" href="/Usertransactionlist">Transaction</Nav.Link>
-            <Nav.Link className="mb-0 font-small fw-bold text-white" href="/UserReservationlist">Reports</Nav.Link>
+            <Nav.Link className="mb-0 font-small fw-bold text-white" href="/UserReservationlist">Reservations</Nav.Link>
+            <Nav.Link className="mb-0 font-small fw-bold text-white" href="/UserEventlist">Events</Nav.Link>
             <Nav.Link className="mb-0 font-small fw-bold text-white" href="/reports/addreports">Reports</Nav.Link>
             </Nav>
             </>
@@ -71,26 +74,6 @@ const Newnavbar = (props) => {
           </div>
 
           <Nav className="align-items-center">
-            <Dropdown >
-              <Dropdown.Toggle as={Nav.Link} className="text-lighticon-notifications me-lg-3 text-white">
-                <span className="icon icon-sm ">
-                  <FontAwesomeIcon icon={faBell} className="bell-shake text-white"/>
-                 <span className="icon-badge rounded-circle unread-notifications" />
-                </span>
-              </Dropdown.Toggle>
-              
-              <Dropdown.Menu className="dashboard-dropdown notifications-dropdown dropdown-menu-lg dropdown-menu-center mt-2 py-0">
-                <ListGroup className="list-group-flush">
-                  <Nav.Link href="#" className="text-center text-primary fw-bold border-bottom border-light py-3">
-                    Notifications
-                  </Nav.Link>
-
-                  <Dropdown.Item className="text-center text-primary fw-bold py-3">
-                          No Notification
-                  </Dropdown.Item>
-                </ListGroup>
-              </Dropdown.Menu>
-            </Dropdown>
 
             <Dropdown as={Nav.Item}>
               <Dropdown.Toggle as={Nav.Link} className="pt-1 px-0 text-white">

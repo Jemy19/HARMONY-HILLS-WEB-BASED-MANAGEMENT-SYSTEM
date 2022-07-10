@@ -72,7 +72,8 @@ function New({inputs, title}) {
         uid: res.user.uid,
         ...data,
         timeStamp: serverTimestamp(),
-        isOnline: false
+        isOnline: false,
+        password: " "
       });
       await login("admin@gmail.com", "123456")
       navigate('/userList')

@@ -73,32 +73,29 @@ function Home() {
           alt="First slide"
         />
         <Carousel.Caption>
-          <h3>First slide label</h3>
-          <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+          <h3>HARMONY HILLS</h3>
+          
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item interval={5000}>
         <img
           className="d-block w-100 imgcarousell"
-          src="https://images.pexels.com/photos/942547/pexels-photo-942547.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+          src="https://lh5.googleusercontent.com/p/AF1QipO0bWwUolz33vaFh5yC6uq4m1nDPvMIw9Dwu0w_=w1080-k-no"
           alt="Second slide"
         />
         <Carousel.Caption>
-          <h3>Second slide label</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          <h3>CLEAN COMMUNITY</h3>
+          <p>Harmony hills provides a clean environment for the people</p>
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item interval={5000}>
         <img
           className="d-block w-100 imgcarousell"
-          src="https://images.pexels.com/photos/4330929/pexels-photo-4330929.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+          src="http://ctb.ku.edu/sites/default/files/chapter_files/group_of_friends_huddle_in_rear_view_together.jpg"
           alt="Third slide"
         />
         <Carousel.Caption>
-          <h3>Third slide label</h3>
-          <p>
-            Praesent commodo cursus magna, vel scelerisque nisl consectetur.
-          </p>
+          <h3>Friendly Neighborhood</h3>
         </Carousel.Caption>
       </Carousel.Item>
     </Carousel>
@@ -115,25 +112,6 @@ function Home() {
             <small>{item.date}</small>
           </div>
           <p className="mb-1">{item.body}</p>
-          <small></small>
-        </a>
-      </div>
-      </Card.Body>
-      ))}
-      <Card.Footer className="text-muted"></Card.Footer>
-    </Card>
-
-    <Card as={Col} className="text-center">
-      <Card.Header>Events</Card.Header>
-      {news.map((item)=>(
-      <Card.Body>
-      <div className="list-group">
-        <a href="#" className="list-group-item list-group-item-action">
-          <div className="d-flex w-100 justify-content-between">
-            <h5 className="mb-1">{item.title}</h5>
-            <small>{item.edate}</small>
-          </div>
-          <p className="mb-1">{item.location}</p>
           <small></small>
         </a>
       </div>

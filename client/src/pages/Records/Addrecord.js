@@ -86,7 +86,7 @@ function Addrecord({inputs, title}) {
       <div className="newContainer">
 
         <div className="top">
-          <h1>{title}</h1>
+          <h4>{title}</h4>
         </div>
         <div className="recordbottom">
           <div className="recordright">
